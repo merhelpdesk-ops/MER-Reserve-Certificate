@@ -85,22 +85,18 @@
   <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[350px] bg-brand-500/10 blur-[130px] pointer-events-none rounded-full z-0"></div>
   <div class="fixed bottom-0 right-0 w-[500px] h-[500px] bg-blue-600/5 blur-[160px] pointer-events-none rounded-full z-0"></div>
 
+  <!-- 独立置顶导航栏（专供 Logo 与 全局操作控件） -->
   <header class="border-b border-slate-800/80 bg-dark-bg/80 backdrop-blur-xl sticky top-0 z-50">
-    <div class="max-w-5xl mx-auto px-3 sm:px-6 lg:px-8 py-3 flex items-center justify-between gap-2 sm:gap-4">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between gap-3">
       
-      <!-- 左上角 Logo 区域已优化 -->
-      <div class="flex items-center gap-2 sm:gap-3.5 min-w-0">
-        <img src="merlogo.webp" alt="MER Logo" class="h-7 sm:h-8 w-auto object-contain shrink-0 max-w-[140px] sm:max-w-[180px]">
-        <div class="border-l border-slate-800 pl-2 sm:pl-3.5 min-w-0">
-          <h1 class="text-xs sm:text-sm font-bold text-white tracking-tight sm:tracking-wide truncate" id="txtTitle">
-            MER Proof of Reserves
-          </h1>
-          <p class="text-[10px] sm:text-[11px] text-slate-400 font-medium truncate" id="txtSubtitle">100% Backed Reserve Guarantee</p>
-        </div>
+      <!-- 左侧：完整无挤压 Logo -->
+      <div class="flex items-center shrink-0">
+        <img src="merlogo.webp" alt="MER Protocol" class="h-7 sm:h-8 w-auto object-contain shrink-0 max-w-[160px] sm:max-w-[220px]">
       </div>
 
-      <div class="flex items-center gap-1.5 sm:gap-3 shrink-0">
-        <span class="inline-flex items-center gap-1.5 px-2 py-1 sm:px-3 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-semibold bg-brand-500/10 text-brand-400 border border-brand-500/20 whitespace-nowrap shrink-0">
+      <!-- 右侧：审计状态与语言选择器 -->
+      <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-semibold bg-brand-500/10 text-brand-400 border border-brand-500/20 whitespace-nowrap">
           <span class="relative flex h-2 w-2 shrink-0">
             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
             <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-500"></span>
@@ -109,7 +105,7 @@
         </span>
 
         <div class="relative shrink-0">
-          <select id="langSelect" class="appearance-none bg-slate-900 border border-slate-700/80 hover:border-slate-600 text-[11px] sm:text-xs text-slate-200 pl-2 pr-6 sm:pl-3 sm:pr-8 py-1 sm:py-1.5 rounded-lg sm:rounded-xl focus:outline-none focus:ring-1 focus:ring-brand-500/50 cursor-pointer font-medium">
+          <select id="langSelect" class="appearance-none bg-slate-900 border border-slate-700/80 hover:border-slate-600 text-[11px] sm:text-xs text-slate-200 pl-2.5 pr-6 sm:pl-3 sm:pr-8 py-1 sm:py-1.5 rounded-lg sm:rounded-xl focus:outline-none focus:ring-1 focus:ring-brand-500/50 cursor-pointer font-medium">
             <option value="en" selected>English</option>
             <option value="zh">简体中文</option>
             <option value="zht">繁體中文</option>
@@ -126,6 +122,17 @@
 
   <main class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 space-y-6">
 
+    <!-- 主页面标题区（宽敞大气，不会与 Logo 争夺宽度） -->
+    <div class="space-y-1 pt-1 pb-2">
+      <h1 class="text-xl sm:text-3xl font-extrabold text-white tracking-tight" id="txtTitle">
+        MER Proof of Reserves
+      </h1>
+      <p class="text-xs sm:text-sm text-slate-400 font-medium" id="txtSubtitle">
+        100% Backed Reserve Guarantee
+      </p>
+    </div>
+
+    <!-- 验证时间与托管说明卡片 -->
     <div class="relative overflow-hidden bg-gradient-to-r from-slate-900/90 via-dark-card to-slate-900/90 border border-slate-800 p-5 sm:p-6 rounded-2xl shadow-glow-card flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-5">
       <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-brand-500/5 rounded-full blur-2xl pointer-events-none"></div>
       
@@ -145,6 +152,7 @@
       </div>
     </div>
 
+    <!-- 储备金资产列表 -->
     <div id="reservesList" class="space-y-4"></div>
 
   </main>
