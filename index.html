@@ -97,7 +97,10 @@
         notice: "所有 MER 协议代币均由原生区块链资产以 >100% 比例超额抵押托管。",
         ratioLabel: "储备金率",
         balanceLabel: "发行余额",
-        reserveLabel: "储备余额"
+        reserveLabel: "储备余额",
+        totalSupplyLabel: "发行数量",
+        circulatingSupplyLabel: "流通数量",
+        nativeReserveLabel: "原生资产数量"
       },
       zht: {
         title: "MER 儲備金證明",
@@ -108,7 +111,10 @@
         notice: "所有 MER 協議代幣均由原生區塊鏈資產以 >100% 比例超額抵押託管。",
         ratioLabel: "儲備金率",
         balanceLabel: "發行餘額",
-        reserveLabel: "儲備餘額"
+        reserveLabel: "儲備餘額",
+        totalSupplyLabel: "發行數量",
+        circulatingSupplyLabel: "流通數量",
+        nativeReserveLabel: "原生資產數量"
       },
       en: {
         title: "MER Proof of Reserves",
@@ -119,7 +125,10 @@
         notice: "All MER protocol tokens are fully backed and over-collateralized by native blockchain assets.",
         ratioLabel: "Reserve Ratio",
         balanceLabel: "Issued Balance",
-        reserveLabel: "Reserve Balance"
+        reserveLabel: "Reserve Balance",
+        totalSupplyLabel: "Total Issued",
+        circulatingSupplyLabel: "Circulating Supply",
+        nativeReserveLabel: "Native Reserves"
       },
       ko: {
         title: "MER 준비금 증명",
@@ -130,12 +139,16 @@
         notice: "모든 MER 프로토콜 토큰은 원본 블록체인 자산으로 100% 이상 초과 담보 보관됩니다.",
         ratioLabel: "준비율",
         balanceLabel: "발행 잔액",
-        reserveLabel: "준비금 잔액"
+        reserveLabel: "준비금 잔액",
+        totalSupplyLabel: "발행 수량",
+        circulatingSupplyLabel: "유통 수량",
+        nativeReserveLabel: "원본 자산 수량"
       }
     };
 
     const reservesData = [
       {
+        isMer: true,
         name: "MER Token",
         symbol: "MER",
         merSymbol: "MER",
@@ -145,40 +158,48 @@
         nativeBalance: "0"
       },
       {
+        isMer: false,
         name: "Bitcoin",
         symbol: "BTC",
         merSymbol: "MERBTC",
         ratio: "100%",
         iconImg: "MERBTC.jpg",
-        merBalance: "0",
-        nativeBalance: "0"
+        totalSupply: "100",
+        circulatingSupply: "100",
+        nativeReserve: "0"
       },
       {
+        isMer: false,
         name: "Ethereum",
         symbol: "ETH",
         merSymbol: "MERETH",
         ratio: "100%",
         iconImg: "MERETH.jpg",
-        merBalance: "0",
-        nativeBalance: "0"
+        totalSupply: "1,000,000",
+        circulatingSupply: "1,000,000",
+        nativeReserve: "0"
       },
       {
+        isMer: false,
         name: "Solana",
         symbol: "SOL",
         merSymbol: "MERSOL",
         ratio: "100%",
         iconImg: "MERSOL.jpg",
-        merBalance: "0",
-        nativeBalance: "0"
+        totalSupply: "10,000,000",
+        circulatingSupply: "10,000,000",
+        nativeReserve: "0"
       },
       {
+        isMer: false,
         name: "USD Coin",
         symbol: "USDC",
         merSymbol: "MERUSD",
         ratio: "100%",
         iconImg: "MERUSD.jpg",
-        merBalance: "0",
-        nativeBalance: "0"
+        totalSupply: "9,999,999,996",
+        circulatingSupply: "9,999,999,996",
+        nativeReserve: "0"
       }
     ];
 
@@ -199,41 +220,80 @@
     function renderReserves() {
       const t = i18n[currentLang];
       const container = document.getElementById('reservesList');
-      container.innerHTML = reservesData.map(item => `
-        <div class="bg-dark-card border border-dark-border rounded-2xl p-5 shadow-lg hover:border-dark-hover transition-all space-y-4">
-          <div class="flex justify-between items-center pb-3 border-b border-dark-border">
-            <div class="flex items-center gap-3">
-              <img src="${item.iconImg}" alt="${item.merSymbol}" class="w-10 h-10 rounded-full object-cover border border-dark-border">
-              <div>
-                <h3 class="text-base font-bold text-white">${item.name}</h3>
-                <span class="text-xs text-gray-400 font-mono">${item.merSymbol === item.symbol ? item.symbol : `${item.merSymbol} / ${item.symbol}`}</span>
+      container.innerHTML = reservesData.map(item => {
+        if (item.isMer) {
+          return `
+            <div class="bg-dark-card border border-dark-border rounded-2xl p-5 shadow-lg hover:border-dark-hover transition-all space-y-4">
+              <div class="flex justify-between items-center pb-3 border-b border-dark-border">
+                <div class="flex items-center gap-3">
+                  <img src="${item.iconImg}" alt="${item.merSymbol}" class="w-10 h-10 rounded-full object-cover border border-dark-border">
+                  <div>
+                    <h3 class="text-base font-bold text-white">${item.name}</h3>
+                    <span class="text-xs text-gray-400 font-mono">${item.symbol}</span>
+                  </div>
+                </div>
+                <div class="text-right">
+                  <div class="text-xl font-extrabold text-brand-500 font-mono">${item.ratio}</div>
+                  <div class="text-[10px] text-gray-400 uppercase tracking-wider">${t.ratioLabel}</div>
+                </div>
+              </div>
+
+              <div class="space-y-3">
+                <div class="bg-dark-bg/60 border border-dark-border/60 rounded-xl p-3.5 flex justify-between items-center">
+                  <div>
+                    <span class="text-xs text-gray-400 block">${item.merSymbol} ${t.balanceLabel}</span>
+                    <span class="text-sm font-semibold text-gray-200">${item.merSymbol}</span>
+                  </div>
+                  <span class="text-base font-bold text-white font-mono">${item.merBalance}</span>
+                </div>
+
+                <div class="bg-dark-bg/60 border border-dark-border/60 rounded-xl p-3.5 flex justify-between items-center">
+                  <div>
+                    <span class="text-xs text-gray-400 block">${item.symbol} ${t.reserveLabel}</span>
+                    <span class="text-sm font-semibold text-gray-200">${item.symbol}</span>
+                  </div>
+                  <span class="text-base font-bold text-white font-mono">${item.nativeBalance}</span>
+                </div>
               </div>
             </div>
-            <div class="text-right">
-              <div class="text-xl font-extrabold text-brand-500 font-mono">${item.ratio}</div>
-              <div class="text-[10px] text-gray-400 uppercase tracking-wider">${t.ratioLabel}</div>
+          `;
+        }
+
+        return `
+          <div class="bg-dark-card border border-dark-border rounded-2xl p-5 shadow-lg hover:border-dark-hover transition-all space-y-4">
+            <div class="flex justify-between items-center pb-3 border-b border-dark-border">
+              <div class="flex items-center gap-3">
+                <img src="${item.iconImg}" alt="${item.merSymbol}" class="w-10 h-10 rounded-full object-cover border border-dark-border">
+                <div>
+                  <h3 class="text-base font-bold text-white">${item.name}</h3>
+                  <span class="text-xs text-gray-400 font-mono">${item.merSymbol} / ${item.symbol}</span>
+                </div>
+              </div>
+              <div class="text-right">
+                <div class="text-xl font-extrabold text-brand-500 font-mono">${item.ratio}</div>
+                <div class="text-[10px] text-gray-400 uppercase tracking-wider">${t.ratioLabel}</div>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <div class="bg-dark-bg/60 border border-dark-border/60 rounded-xl p-3.5 flex flex-col justify-between">
+                <span class="text-xs text-gray-400 mb-1">${t.totalSupplyLabel} (${item.merSymbol})</span>
+                <span class="text-base font-bold text-white font-mono">${item.totalSupply}</span>
+              </div>
+
+              <div class="bg-dark-bg/60 border border-dark-border/60 rounded-xl p-3.5 flex flex-col justify-between">
+                <span class="text-xs text-gray-400 mb-1">${t.circulatingSupplyLabel} (${item.merSymbol})</span>
+                <span class="text-base font-bold text-white font-mono">${item.circulatingSupply}</span>
+              </div>
+
+              <div class="bg-dark-bg/60 border border-dark-border/60 rounded-xl p-3.5 flex flex-col justify-between">
+                <span class="text-xs text-gray-400 mb-1">${t.nativeReserveLabel} (${item.symbol})</span>
+                <span class="text-base font-bold text-white font-mono">${item.nativeReserve}</span>
+              </div>
             </div>
           </div>
-
-          <div class="space-y-3">
-            <div class="bg-dark-bg/60 border border-dark-border/60 rounded-xl p-3.5 flex justify-between items-center">
-              <div>
-                <span class="text-xs text-gray-400 block">${item.merSymbol} ${t.balanceLabel}</span>
-                <span class="text-sm font-semibold text-gray-200">${item.merSymbol}</span>
-              </div>
-              <span class="text-base font-bold text-white font-mono">${item.merBalance}</span>
-            </div>
-
-            <div class="bg-dark-bg/60 border border-dark-border/60 rounded-xl p-3.5 flex justify-between items-center">
-              <div>
-                <span class="text-xs text-gray-400 block">${item.symbol} ${t.reserveLabel}</span>
-                <span class="text-sm font-semibold text-gray-200">${item.symbol}</span>
-              </div>
-              <span class="text-base font-bold text-white font-mono">${item.nativeBalance}</span>
-            </div>
-          </div>
-        </div>
-      `).join('');
+        `;
+      }).join('');
     }
 
     document.getElementById('langSelect').addEventListener('change', (e) => {
