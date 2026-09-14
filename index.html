@@ -96,7 +96,7 @@
         lastAuditValue: "2026年9月14日 上午12:00",
         notice: "所有 MER 协议代币均由原生区块链资产以 >100% 比例超额抵押托管。",
         ratioLabel: "储备金率",
-        balanceLabel: "余额",
+        balanceLabel: "发行余额",
         reserveLabel: "储备余额"
       },
       zht: {
@@ -107,7 +107,7 @@
         lastAuditValue: "2026年9月14日 上午12:00",
         notice: "所有 MER 協議代幣均由原生區塊鏈資產以 >100% 比例超額抵押託管。",
         ratioLabel: "儲備金率",
-        balanceLabel: "餘額",
+        balanceLabel: "發行餘額",
         reserveLabel: "儲備餘額"
       },
       en: {
@@ -118,7 +118,7 @@
         lastAuditValue: "Sep 14, 2026 12:00 AM",
         notice: "All MER protocol tokens are fully backed and over-collateralized by native blockchain assets.",
         ratioLabel: "Reserve Ratio",
-        balanceLabel: "Balance",
+        balanceLabel: "Issued Balance",
         reserveLabel: "Reserve Balance"
       },
       ko: {
@@ -129,12 +129,21 @@
         lastAuditValue: "2026년 9월 14일 오전 12:00",
         notice: "모든 MER 프로토콜 토큰은 원본 블록체인 자산으로 100% 이상 초과 담보 보관됩니다.",
         ratioLabel: "준비율",
-        balanceLabel: "잔액",
+        balanceLabel: "발행 잔액",
         reserveLabel: "준비금 잔액"
       }
     };
 
     const reservesData = [
+      {
+        name: "MER Token",
+        symbol: "MER",
+        merSymbol: "MER",
+        ratio: "100%",
+        iconImg: "MER.JPG",
+        merBalance: "0",
+        nativeBalance: "0"
+      },
       {
         name: "Bitcoin",
         symbol: "BTC",
@@ -197,7 +206,7 @@
               <img src="${item.iconImg}" alt="${item.merSymbol}" class="w-10 h-10 rounded-full object-cover border border-dark-border">
               <div>
                 <h3 class="text-base font-bold text-white">${item.name}</h3>
-                <span class="text-xs text-gray-400 font-mono">${item.merSymbol} / ${item.symbol}</span>
+                <span class="text-xs text-gray-400 font-mono">${item.merSymbol === item.symbol ? item.symbol : `${item.merSymbol} / ${item.symbol}`}</span>
               </div>
             </div>
             <div class="text-right">
