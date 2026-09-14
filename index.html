@@ -85,16 +85,13 @@
   <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[350px] bg-brand-500/10 blur-[130px] pointer-events-none rounded-full z-0"></div>
   <div class="fixed bottom-0 right-0 w-[500px] h-[500px] bg-blue-600/5 blur-[160px] pointer-events-none rounded-full z-0"></div>
 
-  <!-- 独立置顶导航栏 -->
   <header class="border-b border-slate-800/80 bg-dark-bg/80 backdrop-blur-xl sticky top-0 z-50">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between gap-3">
       
-      <!-- 左侧：完整 Logo -->
       <div class="flex items-center shrink-0">
         <img src="merlogo.webp" alt="MER Protocol" class="h-7 sm:h-8 w-auto object-contain shrink-0 max-w-[160px] sm:max-w-[220px]">
       </div>
 
-      <!-- 右侧：审计状态与语言选择器 -->
       <div class="flex items-center gap-2 sm:gap-3 shrink-0">
         <span class="inline-flex items-center gap-1.5 px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-semibold bg-brand-500/10 text-brand-400 border border-brand-500/20 whitespace-nowrap">
           <span class="relative flex h-2 w-2 shrink-0">
@@ -122,7 +119,6 @@
 
   <main class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 space-y-6">
 
-    <!-- 主页面标题区 -->
     <div class="space-y-1 pt-1 pb-2">
       <h1 class="text-xl sm:text-3xl font-extrabold text-white tracking-tight" id="txtTitle">
         MER Proof of Reserves
@@ -132,7 +128,6 @@
       </p>
     </div>
 
-    <!-- 验证时间与托管说明卡片 -->
     <div class="relative overflow-hidden bg-gradient-to-r from-slate-900/90 via-dark-card to-slate-900/90 border border-slate-800 p-5 sm:p-6 rounded-2xl shadow-glow-card flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-5">
       <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-brand-500/5 rounded-full blur-2xl pointer-events-none"></div>
       
@@ -152,7 +147,6 @@
       </div>
     </div>
 
-    <!-- 储备金资产列表 -->
     <div id="reservesList" class="space-y-4"></div>
 
   </main>
@@ -279,7 +273,7 @@
         circulatingSupply: "0",
         nativeReserve: "0",
         addresses: [
-          { type: 'chainBTC', address: 'bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh' }
+          { type: 'chainBTC', address: '' }
         ]
       },
       {
@@ -292,7 +286,7 @@
         circulatingSupply: "0",
         nativeReserve: "0",
         addresses: [
-          { type: 'chainETH', address: '0x71C7656EC7ab88b098defB751B7401B5f6d8976F' }
+          { type: 'chainETH', address: '' }
         ]
       },
       {
@@ -305,7 +299,7 @@
         circulatingSupply: "0",
         nativeReserve: "0",
         addresses: [
-          { type: 'chainSOL', address: '7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosgAsU' }
+          { type: 'chainSOL', address: '' }
         ]
       },
       {
@@ -318,8 +312,8 @@
         circulatingSupply: "0",
         nativeReserve: "0",
         addresses: [
-          { type: 'chainETH', address: '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48' },
-          { type: 'chainSOL', address: 'EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v' }
+          { type: 'chainETH', address: '' },
+          { type: 'chainSOL', address: '' }
         ]
       },
       {
@@ -333,7 +327,7 @@
         circulatingSupply: "0",
         nativeReserve: "100,000,000",
         addresses: [
-          { type: 'chainSOL', address: 'Mer3k9v3n92K4mF18dL9s1xP12k0a98z7mNQ3pB21vL' }
+          { type: 'chainSOL', address: '' }
         ]
       }
     ];
@@ -357,6 +351,7 @@
     }
 
     function copyToClipboard(text, btn) {
+      if (!text) return;
       navigator.clipboard.writeText(text).then(() => {
         const textSpan = btn.querySelector('span');
         const origText = textSpan.innerText;
@@ -381,9 +376,11 @@
       container.innerHTML = reservesData.map(item => {
         const addressesHtml = item.addresses.map(addrObj => {
           const chainLabel = t[addrObj.type] || addrObj.type;
-          const shortAddr = addrObj.address.length > 22 
-            ? `${addrObj.address.substring(0, 10)}...${addrObj.address.substring(addrObj.address.length - 8)}`
-            : addrObj.address;
+          const shortAddr = addrObj.address 
+            ? (addrObj.address.length > 22 
+                ? `${addrObj.address.substring(0, 10)}...${addrObj.address.substring(addrObj.address.length - 8)}`
+                : addrObj.address)
+            : '';
 
           return `
             <div class="flex items-center justify-between gap-2 bg-slate-950/80 border border-slate-800/80 rounded-xl px-3 py-2 text-xs">
@@ -466,7 +463,6 @@
               </div>
             </div>
 
-            <!-- 储备金地址区域 -->
             <div class="pt-2 border-t border-slate-800/60 space-y-2">
               <div class="text-[10px] sm:text-[11px] font-semibold text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
                 <svg class="w-3.5 h-3.5 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
