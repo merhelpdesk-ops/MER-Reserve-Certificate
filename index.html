@@ -419,7 +419,7 @@
       
       container.innerHTML = reservesData.map(function(item) {
         const tokenMeta = t.tokens[item.key];
-
+        
         const renderAddressList = (addresses, sectionTitle) => {
           if (!addresses || addresses.length === 0) return '';
           const gridCols = addresses.length > 1 ? 'sm:grid-cols-2' : '';
@@ -481,6 +481,7 @@
           : '<span class="text-slate-400">' + t.backedAsset + '</span> <span class="text-slate-200 font-semibold">' + tokenMeta.nativeUnit + '</span>';
 
         const reserveText = item.isMer ? t.reserveLabel : t.nativeReserveLabel;
+        const gridCols = item.addresses.length > 1 ? 'sm:grid-cols-2' : '';
 
         return '<div class="group relative bg-dark-card border border-slate-800/80 hover:border-slate-700/80 hover:bg-dark-cardHover rounded-2xl p-4 sm:p-5 shadow-glow-card hover:shadow-glow-emerald transition-all duration-300 space-y-3.5 sm:space-y-4">' +
             '<div class="flex items-center justify-between gap-3 pb-3 border-b border-slate-800/80">' +
