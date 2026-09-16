@@ -121,7 +121,7 @@
     <div class="space-y-1 sm:space-y-2">
       <div class="inline-flex items-center gap-1.5 sm:gap-2 font-mono text-[9px] sm:text-[10px] tracking-wider sm:tracking-widest text-emerald-400 uppercase bg-emerald-500/10 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-md border border-emerald-500/20">
         <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-        Zero-Knowledge Cryptographic Reserve Engine
+        <span id="txtEngine">Zero-Knowledge Cryptographic Reserve Engine</span>
       </div>
       <h1 class="text-2xl sm:text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-slate-400 tracking-tight font-sans" id="txtTitle">
         MER Proof of Reserves
@@ -160,7 +160,7 @@
 
   <footer class="relative z-10 border-t border-white/[0.06] mt-12 sm:mt-20 py-6 sm:py-8 text-center text-xs text-slate-500 bg-[#020509]">
     <div class="max-w-5xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4 font-mono">
-      <div class="text-slate-400">© MER Global <span id="txtFooterRights">All rights reserved.</span></div>
+      <div class="text-slate-400">© <span id="txtFooterBrand">MER Global</span> <span id="txtFooterRights">All rights reserved.</span></div>
       <div class="flex items-center gap-3 sm:gap-4 text-slate-400 text-[10px] sm:text-[11px]">
         <span class="inline-flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399]"></span> <span id="txtFooterVerified">Cryptographically Verified</span></span>
         <span class="text-slate-700">|</span>
@@ -175,6 +175,7 @@
         title: "MER Proof of Reserves",
         subtitle: "100% Backed Reserve Guarantee",
         status: "Real-Time Audited",
+        engine: "Zero-Knowledge Cryptographic Reserve Engine",
         lastAuditLabel: "Last Verification (UTC+8)",
         lastAuditValue: "Sep 15, 2026 12:00 AM",
         notice: "All tokens issued by MER maintain a ratio >= circulating supply.",
@@ -184,91 +185,121 @@
         nativeReserveLabel: "Native Reserves",
         reserveLabel: "Reserve Balance",
         backedAsset: "Backed Asset:",
-        nativeToken: "MER Global Token",
-        reserveAddresses: "Reserve Addresses",
+        nativeToken: "MER Global Native Vault Asset",
+        reserveAddresses: "Reserve Vault Addresses",
         copy: "Copy",
         copied: "Copied!",
+        footerBrand: "MER Global",
         footerRights: "All rights reserved.",
         footerVerified: "Cryptographically Verified",
         footerTransparency: "On-Chain Transparency",
         chainBTC: "Bitcoin Native",
         chainETH: "Ethereum (ERC-20)",
-        chainSOL: "Solana Network"
+        chainSOL: "Solana Network",
+        token_btc: "Bitcoin",
+        token_eth: "Ethereum",
+        token_sol: "Solana",
+        token_usdc: "USD Coin",
+        token_mer: "MER Global Token"
       },
       zh: {
         title: "MER 储备金证明",
-        subtitle: "100% 资产准备金保证",
+        subtitle: "100% 资产准备金担保",
         status: "实时审计中",
+        engine: "零知识密码学储备金验证引擎",
         lastAuditLabel: "上次验证时间 (UTC+8)",
         lastAuditValue: "2026年9月15日 上午12:00",
-        notice: "所有MER发行的币种均保持>=流通的代币比例",
+        notice: "所有 MER 发行的代币均保持 >= 流通总量的资产储备比例。",
         ratioLabel: "储备金率",
-        totalSupplyLabel: "发行数量",
-        circulatingSupplyLabel: "流通数量",
-        nativeReserveLabel: "原生资产数量",
-        reserveLabel: "储备余额",
+        totalSupplyLabel: "发行总量",
+        circulatingSupplyLabel: "流通总量",
+        nativeReserveLabel: "原生储备资产",
+        reserveLabel: "储备金余额",
         backedAsset: "支持资产：",
-        nativeToken: "梅尔全球代币",
-        reserveAddresses: "储备金地址",
+        nativeToken: "MER 全球原生金库资产",
+        reserveAddresses: "储备金金库地址",
         copy: "复制",
         copied: "已复制！",
-        footerRights: "保留所有版权",
-        footerVerified: "密码学验证",
-        footerTransparency: "链上透明度",
-        chainBTC: "Bitcoin 原生链",
-        chainETH: "Ethereum (ERC-20)",
-        chainSOL: "Solana 网络"
+        footerBrand: "MER 全球",
+        footerRights: "保留所有权利。",
+        footerVerified: "零知识密码学验证",
+        footerTransparency: "链上数据完全公开透明",
+        chainBTC: "比特币原生网络",
+        chainETH: "以太坊网络 (ERC-20)",
+        chainSOL: "索拉纳网络",
+        token_btc: "比特币",
+        token_eth: "以太坊",
+        token_sol: "索拉纳",
+        token_usdc: "美元稳定币",
+        token_mer: "MER 全球代币"
       },
       zht: {
         title: "MER 儲備金證明",
-        subtitle: "100% 資產準備金保證",
+        subtitle: "100% 資產準備金擔保",
         status: "實時審計中",
+        engine: "零知識密碼學儲備金驗證引擎",
         lastAuditLabel: "上次驗證時間 (UTC+8)",
         lastAuditValue: "2026年9月15日 上午12:00",
-        notice: "所有MER發行的幣種均保持>=流通的代幣比例",
+        notice: "所有 MER 發行的代幣均保持 >= 流通總量的資產儲備比例。",
         ratioLabel: "儲備金率",
-        totalSupplyLabel: "發行數量",
-        circulatingSupplyLabel: "流通數量",
-        nativeReserveLabel: "原生資產數量",
-        reserveLabel: "儲備餘額",
+        totalSupplyLabel: "發行總量",
+        circulatingSupplyLabel: "流通總量",
+        nativeReserveLabel: "原生儲備資產",
+        reserveLabel: "儲備金餘額",
         backedAsset: "支持資產：",
-        nativeToken: "梅爾全球代幣",
-        reserveAddresses: "儲備金地址",
+        nativeToken: "MER 全球原生金庫資產",
+        reserveAddresses: "儲備金金庫地址",
         copy: "複製",
         copied: "已複製！",
-        footerRights: "保留所有版權",
-        footerVerified: "密碼學驗證",
-        footerTransparency: "鏈上網路"
+        footerBrand: "MER 全球",
+        footerRights: "版權所有，保留一切權利。",
+        footerVerified: "零知識密碼學驗證",
+        footerTransparency: "鏈上數據完全公開透明",
+        chainBTC: "比特幣原生網路",
+        chainETH: "以太坊網路 (ERC-20)",
+        chainSOL: "索拉納網路",
+        token_btc: "比特幣",
+        token_eth: "以太坊",
+        token_sol: "索拉納",
+        token_usdc: "美元穩定幣",
+        token_mer: "MER 全球代幣"
       },
       ko: {
         title: "MER 준비금 증명",
-        subtitle: "100% 자산 준비금 보증",
+        subtitle: "100% 준비금 보증 보장",
         status: "실시간 감사 중",
+        engine: "영지식 암호화 준비금 검증 엔진",
         lastAuditLabel: "마지막 검증 시간 (UTC+8)",
         lastAuditValue: "2026년 9월 15일 오전 12:00",
-        notice: "모든 MER 발행 토큰은 유통량 대비 >= 비율을 유지합니다.",
+        notice: "모든 MER 발행 토큰은 유통량 대비 100% 이상의 준비금 비율을 유지합니다.",
         ratioLabel: "준비율",
-        totalSupplyLabel: "발행 수량",
+        totalSupplyLabel: "발행 총량",
         circulatingSupplyLabel: "유통 수량",
-        nativeReserveLabel: "원본 자산 수량",
+        nativeReserveLabel: "원본 준비 자산",
         reserveLabel: "준비금 잔액",
         backedAsset: "담보 자산:",
-        nativeToken: "MER Global Token",
-        reserveAddresses: "준비금 주소",
+        nativeToken: "MER 글로벌 원본 금고 자산",
+        reserveAddresses: "준비금 금고 주소",
         copy: "복사",
         copied: "복사됨!",
-        footerRights: "모든 권리 보유",
-        footerVerified: "암호학적 검증됨",
-        footerTransparency: "체인 상 투명성",
-        chainBTC: "비트코인 네이티브",
-        chainETH: "이더리움 (ERC-20)",
-        chainSOL: "솔라나 네트워크"
+        footerBrand: "MER 글로벌",
+        footerRights: "모든 권리 보유.",
+        footerVerified: "영지식 암호학적 검증 완료",
+        footerTransparency: "온체인 실시간 투명성",
+        chainBTC: "비트코인 네이티브 체인",
+        chainETH: "이더리움 네트워크 (ERC-20)",
+        chainSOL: "솔라나 네트워크",
+        token_btc: "비트코인",
+        token_eth: "이더리움",
+        token_sol: "솔라나",
+        token_usdc: "USD 코인",
+        token_mer: "MER 글로벌 토큰"
       }
     };
 
     const reservesData = [
       {
-        name: "Bitcoin",
+        key: "btc",
         symbol: "BTC",
         merSymbol: "MERBTC",
         ratio: "100%",
@@ -281,7 +312,7 @@
         ]
       },
       {
-        name: "Ethereum",
+        key: "eth",
         symbol: "ETH",
         merSymbol: "MERETH",
         ratio: "100%",
@@ -294,7 +325,7 @@
         ]
       },
       {
-        name: "Solana",
+        key: "sol",
         symbol: "SOL",
         merSymbol: "MERSOL",
         ratio: "100%",
@@ -307,7 +338,7 @@
         ]
       },
       {
-        name: "USD Coin",
+        key: "usdc",
         symbol: "USDC",
         merSymbol: "MERUSD",
         ratio: "100%",
@@ -321,8 +352,8 @@
         ]
       },
       {
+        key: "mer",
         isMer: true,
-        name: "MER Global Token",
         symbol: "MER",
         merSymbol: "MER",
         ratio: "100%",
@@ -343,10 +374,12 @@
       document.getElementById('txtTitle').innerText = t.title;
       document.getElementById('txtSubtitle').innerText = t.subtitle;
       document.getElementById('txtStatus').innerText = t.status;
+      document.getElementById('txtEngine').innerText = t.engine;
       document.getElementById('txtLastAuditLabel').innerText = t.lastAuditLabel;
       document.getElementById('txtLastAuditValue').innerText = t.lastAuditValue;
       document.getElementById('txtNotice').innerText = t.notice;
       
+      document.getElementById('txtFooterBrand').innerText = t.footerBrand;
       document.getElementById('txtFooterRights').innerText = t.footerRights;
       document.getElementById('txtFooterVerified').innerText = t.footerVerified;
       document.getElementById('txtFooterTransparency').innerText = t.footerTransparency;
@@ -412,8 +445,9 @@
             '</div>';
         }).join('');
 
+        const tokenName = t['token_' + item.key] || item.symbol;
         const symbolLabel = item.isMer ? item.symbol : item.merSymbol;
-        const subLabel = item.isMer ? t.nativeToken : (t.backedAsset + ' ' + item.symbol);
+        const subLabel = item.isMer ? t.nativeToken : (t.backedAsset + ' ' + tokenName + ' (' + item.symbol + ')');
         const reserveText = item.isMer ? t.reserveLabel : t.nativeReserveLabel;
         const gridCols = item.addresses.length > 1 ? 'grid-cols-1 sm:grid-cols-2' : 'grid-cols-1';
 
@@ -431,7 +465,7 @@
                 '</div>' +
                 '<div class="min-w-0">' +
                   '<div class="flex items-center gap-1.5">' +
-                    '<h3 class="text-sm sm:text-lg font-bold text-white tracking-wide truncate font-sans">' + item.name + '</h3>' +
+                    '<h3 class="text-sm sm:text-lg font-bold text-white tracking-wide truncate font-sans">' + tokenName + '</h3>' +
                     '<span class="text-[8px] sm:text-[10px] uppercase font-mono font-bold px-1.5 py-0.5 rounded bg-white/[0.06] text-emerald-300 border border-emerald-500/20 shrink-0">' +
                       symbolLabel +
                     '</span>' +
