@@ -180,6 +180,7 @@
         nativeToken: "MER Platform Token",
         reserveAddresses: "Reserve Addresses",
         contractAddresses: "Contract Addresses",
+        depositWarning: "Do not deposit assets into the contract address; your assets will be unrecoverable!",
         copy: "Copy",
         copied: "Copied!",
         footerBrand: "MER Global",
@@ -193,7 +194,7 @@
           btc: { title: "MER Bitcoin", issuedUnit: "MER Bitcoin", nativeUnit: "Bitcoin" },
           eth: { title: "MER Ethereum", issuedUnit: "MER Ethereum", nativeUnit: "Ethereum" },
           sol: { title: "MER Solana", issuedUnit: "MER Solana", nativeUnit: "Solana" },
-          usdc: { title: "MER US Dollar", issuedUnit: "MER US Dollar", nativeUnit: "US Dollar" },
+          usdc: { title: "MER US Dollar", issuedUnit: "MER US Dollar", nativeUnit: "USD Coin" },
           mer: { title: "MER Token", issuedUnit: "MER Token", nativeUnit: "MER Token" }
         }
       },
@@ -213,6 +214,7 @@
         nativeToken: "梅尔平台币",
         reserveAddresses: "储备金地址",
         contractAddresses: "合约地址",
+        depositWarning: "禁止向合约地址充值，否则您的资产将无法找回！",
         copy: "复制",
         copied: "已复制！",
         footerBrand: "梅尔全球",
@@ -246,6 +248,7 @@
         nativeToken: "梅爾平台幣",
         reserveAddresses: "儲備金地址",
         contractAddresses: "合約地址",
+        depositWarning: "禁止向合約地址充值，否則您的資產將無法找回！",
         copy: "複製",
         copied: "已複製！",
         footerBrand: "梅爾全球",
@@ -279,6 +282,7 @@
         nativeToken: "메르 플랫폼 토큰",
         reserveAddresses: "준비금 주소",
         contractAddresses: "계약 주소",
+        depositWarning: "계약 주소로 입금하지 마십시오. 자산을 복구할 수 없습니다!",
         copy: "복사",
         copied: "복사됨!",
         footerBrand: "메르 글로벌",
@@ -306,8 +310,10 @@
         totalSupply: "100",
         circulatingSupply: "0",
         nativeReserve: "0",
-        addresses: [
-          { type: 'chainBTC', address: 'bc1pjqpn93pr5cgu8z5xhgmmgspeeea8wls9ndlfjwp8fjfcjltxyhmqhpuq3g' },
+        reserveAddresses: [
+          { type: 'chainBTC', address: 'bc1pjqpn93pr5cgu8z5xhgmmgspeeea8wls9ndlfjwp8fjfcjltxyhmqhpuq3g' }
+        ],
+        contractAddresses: [
           { type: 'chainSOL', address: 'G9uAnBxjH1TqmbaVup59etJ91TnKd6p2wpmkJzVuDxEk' }
         ]
       },
@@ -318,8 +324,10 @@
         totalSupply: "1,000,000",
         circulatingSupply: "0",
         nativeReserve: "0",
-        addresses: [
-          { type: 'chainETH', address: '0xbb1512197cb1796e1e84d86f6e7f93a6ef6ba213' },
+        reserveAddresses: [
+          { type: 'chainETH', address: '0xbb1512197cb1796e1e84d86f6e7f93a6ef6ba213' }
+        ],
+        contractAddresses: [
           { type: 'chainSOL', address: 'AGjURkBQiQJrcVhMnxziJL4sfVQgyfRt6SNVRoi45N1p' }
         ]
       },
@@ -330,9 +338,10 @@
         totalSupply: "10,000,000",
         circulatingSupply: "0",
         nativeReserve: "0",
-        addresses: [
+        reserveAddresses: [
           { type: 'chainSOL', address: '7HuW2vuhKCfrAifHC4FdWa1jA4u2feiVWMesZhP94Yj7' }
-        ]
+        ],
+        contractAddresses: []
       },
       {
         key: "usdc",
@@ -341,8 +350,10 @@
         totalSupply: "9,999,999,996",
         circulatingSupply: "0",
         nativeReserve: "0",
-        addresses: [
-          { type: 'chainETH', address: '0xbb1512197cb1796e1e84d86f6e7f93a6ef6ba213' },
+        reserveAddresses: [
+          { type: 'chainETH', address: '0xbb1512197cb1796e1e84d86f6e7f93a6ef6ba213' }
+        ],
+        contractAddresses: [
           { type: 'chainSOL', address: '2rtWdaZeUeBsjMaDdKKDbEWruwTry1GxMakV3iU6TFCh' }
         ]
       },
@@ -354,7 +365,8 @@
         totalSupply: "100,000,000",
         circulatingSupply: "0",
         nativeReserve: "0",
-        addresses: [
+        reserveAddresses: [],
+        contractAddresses: [
           { type: 'chainSOL', address: 'BRu9o8izUhDzpH3duP8ot5h2y5ghbtNWHY8LoiK6N7VM' }
         ]
       }
@@ -407,39 +419,68 @@
       
       container.innerHTML = reservesData.map(function(item) {
         const tokenMeta = t.tokens[item.key];
-        const addressesHtml = item.addresses.map(function(addrObj) {
-          const chainLabel = t[addrObj.type] || addrObj.type;
-          const shortAddr = addrObj.address 
-            ? (addrObj.address.length > 22 
-                ? addrObj.address.substring(0, 10) + '...' + addrObj.address.substring(addrObj.address.length - 8)
-                : addrObj.address)
-            : '';
 
-          return '<div class="flex items-center justify-between gap-2 bg-slate-950/80 border border-slate-800/80 rounded-xl px-3 py-2 text-xs">' +
-              '<div class="flex items-center gap-2 min-w-0">' +
-                '<span class="text-[10px] sm:text-xs font-semibold text-slate-400 shrink-0 bg-slate-800/80 px-2 py-0.5 rounded border border-slate-700/50">' +
-                  chainLabel +
-                '</span>' +
-                '<span class="font-mono text-slate-300 truncate text-[11px] sm:text-xs select-all" title="' + addrObj.address + '">' +
-                  shortAddr +
-                '</span>' +
-              '</div>' +
-              '<button onclick="copyToClipboard(\'' + addrObj.address + '\', this)" ' +
-                      'class="shrink-0 inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700/60 transition-all text-[11px] font-medium active:scale-95 cursor-pointer">' +
-                '<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">' +
-                  '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>' +
+        const renderAddressList = (addresses, sectionTitle) => {
+          if (!addresses || addresses.length === 0) return '';
+          const gridCols = addresses.length > 1 ? 'sm:grid-cols-2' : '';
+          
+          const itemsHtml = addresses.map(function(addrObj) {
+            const chainLabel = t[addrObj.type] || addrObj.type;
+            const shortAddr = addrObj.address 
+              ? (addrObj.address.length > 22 
+                  ? addrObj.address.substring(0, 10) + '...' + addrObj.address.substring(addrObj.address.length - 8)
+                  : addrObj.address)
+              : '';
+
+            return '<div class="flex items-center justify-between gap-2 bg-slate-950/80 border border-slate-800/80 rounded-xl px-3 py-2 text-xs">' +
+                '<div class="flex items-center gap-2 min-w-0">' +
+                  '<span class="text-[10px] sm:text-xs font-semibold text-slate-400 shrink-0 bg-slate-800/80 px-2 py-0.5 rounded border border-slate-700/50">' +
+                    chainLabel +
+                  '</span>' +
+                  '<span class="font-mono text-slate-300 truncate text-[11px] sm:text-xs select-all" title="' + addrObj.address + '">' +
+                    shortAddr +
+                  '</span>' +
+                '</div>' +
+                '<button onclick="copyToClipboard(\'' + addrObj.address + '\', this)" ' +
+                        'class="shrink-0 inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700/60 transition-all text-[11px] font-medium active:scale-95 cursor-pointer">' +
+                  '<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">' +
+                    '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>' +
+                  '</svg>' +
+                  '<span>' + t.copy + '</span>' +
+                '</button>' +
+              '</div>';
+          }).join('');
+
+          return '<div class="pt-2 border-t border-slate-800/60 space-y-2">' +
+              '<div class="text-[10px] sm:text-[11px] font-semibold text-slate-400 uppercase tracking-wider flex items-center gap-1.5">' +
+                '<svg class="w-3.5 h-3.5 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">' +
+                  '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>' +
+                  '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>' +
                 '</svg>' +
-                '<span>' + t.copy + '</span>' +
-              '</button>' +
+                sectionTitle +
+              '</div>' +
+              '<div class="grid grid-cols-1 ' + gridCols + ' gap-2">' +
+                itemsHtml +
+              '</div>' +
             '</div>';
-        }).join('');
+        };
+
+        const reserveAddressesHtml = renderAddressList(item.reserveAddresses, t.reserveAddresses);
+        
+        let contractAddressesHtml = '';
+        if (item.contractAddresses && item.contractAddresses.length > 0) {
+          const warningHtml = '<div class="flex items-start gap-2 bg-amber-500/10 border border-amber-500/20 text-amber-300 text-[11px] px-3 py-2 rounded-xl mb-2">' +
+              '<svg class="w-4 h-4 shrink-0 mt-0.5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>' +
+              '<span>' + t.depositWarning + '</span>' +
+            '</div>';
+          contractAddressesHtml = warningHtml + renderAddressList(item.contractAddresses, t.contractAddresses);
+        }
 
         const subLabelHtml = item.isMer
           ? '<span class="inline-flex items-center px-2 py-0.5 rounded bg-brand-500/10 text-brand-400 border border-brand-500/20 text-[10px] sm:text-[11px] font-medium">' + t.nativeToken + '</span>'
           : '<span class="text-slate-400">' + t.backedAsset + '</span> <span class="text-slate-200 font-semibold">' + tokenMeta.nativeUnit + '</span>';
 
         const reserveText = item.isMer ? t.reserveLabel : t.nativeReserveLabel;
-        const gridCols = item.addresses.length > 1 ? 'sm:grid-cols-2' : '';
 
         return '<div class="group relative bg-dark-card border border-slate-800/80 hover:border-slate-700/80 hover:bg-dark-cardHover rounded-2xl p-4 sm:p-5 shadow-glow-card hover:shadow-glow-emerald transition-all duration-300 space-y-3.5 sm:space-y-4">' +
             '<div class="flex items-center justify-between gap-3 pb-3 border-b border-slate-800/80">' +
@@ -492,18 +533,8 @@
                 '<span class="text-sm sm:text-base font-bold text-brand-400 font-mono tracking-tight">' + item.nativeReserve + ' <span class="text-xs text-slate-400 font-sans font-normal">' + tokenMeta.nativeUnit + '</span></span>' +
               '</div>' +
             '</div>' +
-            '<div class="pt-2 border-t border-slate-800/60 space-y-2">' +
-              '<div class="text-[10px] sm:text-[11px] font-semibold text-slate-400 uppercase tracking-wider flex items-center gap-1.5">' +
-                '<svg class="w-3.5 h-3.5 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">' +
-                  '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>' +
-                  '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>' +
-                '</svg>' +
-                t.reserveAddresses +
-              '</div>' +
-              '<div class="grid grid-cols-1 ' + gridCols + ' gap-2">' +
-                addressesHtml +
-              '</div>' +
-            '</div>' +
+            reserveAddressesHtml +
+            contractAddressesHtml +
           '</div>';
       }).join('');
     }
