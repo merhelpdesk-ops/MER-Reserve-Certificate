@@ -192,7 +192,7 @@
           btc: { title: "MER Bitcoin", issuedUnit: "MER Bitcoin", nativeUnit: "Bitcoin" },
           eth: { title: "MER Ethereum", issuedUnit: "MER Ethereum", nativeUnit: "Ethereum" },
           sol: { title: "MER Solana", issuedUnit: "MER Solana", nativeUnit: "Solana" },
-          usdc: { title: "MER US Dollar", issuedUnit: "MER US Dollar", nativeUnit: "USD Coin" },
+          usdc: { title: "MER US Dollar", issuedUnit: "MER US Dollar", nativeUnit: "US Dollar" },
           mer: { title: "MER Global Token", issuedUnit: "MER Token", nativeUnit: "MER Token" }
         }
       },
@@ -206,8 +206,8 @@
         ratioLabel: "储备金率",
         totalSupplyLabel: "发行数量",
         circulatingSupplyLabel: "流通数量",
-        nativeReserveLabel: "原生资产数量",
-        reserveLabel: "储备余额",
+        nativeReserveLabel: "原生资产储备金数量",
+        reserveLabel: "储备金余额",
         backedAsset: "锚定资产：",
         nativeToken: "梅尔平台币",
         reserveAddresses: "储备金地址",
@@ -224,7 +224,7 @@
           btc: { title: "梅尔比特币", issuedUnit: "梅尔比特币", nativeUnit: "比特币" },
           eth: { title: "梅尔以太坊", issuedUnit: "梅尔以太坊", nativeUnit: "以太坊" },
           sol: { title: "梅尔索拉纳", issuedUnit: "梅尔索拉纳", nativeUnit: "索拉纳" },
-          usdc: { title: "梅尔美元", issuedUnit: "梅尔美元", nativeUnit: "美元稳定币" },
+          usdc: { title: "梅尔美元", issuedUnit: "梅尔美元", nativeUnit: "美元" },
           mer: { title: "梅尔全球代币", issuedUnit: "梅尔代币", nativeUnit: "梅尔代币" }
         }
       },
@@ -238,8 +238,8 @@
         ratioLabel: "儲備金率",
         totalSupplyLabel: "發行數量",
         circulatingSupplyLabel: "流通數量",
-        nativeReserveLabel: "原生資產數量",
-        reserveLabel: "儲備餘額",
+        nativeReserveLabel: "原生資產儲備金數量",
+        reserveLabel: "儲備金餘額",
         backedAsset: "錨定資產：",
         nativeToken: "梅爾平台幣",
         reserveAddresses: "儲備金地址",
@@ -256,7 +256,7 @@
           btc: { title: "梅爾比特幣", issuedUnit: "梅爾比特幣", nativeUnit: "比特幣" },
           eth: { title: "梅爾以太坊", issuedUnit: "梅爾以太坊", nativeUnit: "以太坊" },
           sol: { title: "梅爾索拉納", issuedUnit: "梅爾索拉納", nativeUnit: "索拉納" },
-          usdc: { title: "梅爾美元", issuedUnit: "梅爾美元", nativeUnit: "美元穩定幣" },
+          usdc: { title: "梅爾美元", issuedUnit: "梅爾美元", nativeUnit: "美元" },
           mer: { title: "梅爾全球代幣", issuedUnit: "梅爾代幣", nativeUnit: "梅爾代幣" }
         }
       },
@@ -270,9 +270,9 @@
         ratioLabel: "준비율",
         totalSupplyLabel: "발행 수량",
         circulatingSupplyLabel: "유통 수량",
-        nativeReserveLabel: "원본 자산 수량",
+        nativeReserveLabel: "원본 자산 준비금 수량",
         reserveLabel: "준비금 잔액",
-        backedAsset: "페깅 자산:",
+        backedAsset: "담보 자산:",
         nativeToken: "메르 플랫폼 토큰",
         reserveAddresses: "준비금 주소",
         copy: "복사",
@@ -288,7 +288,7 @@
           btc: { title: "메르 비트코인", issuedUnit: "메르 비트코인", nativeUnit: "비트코인" },
           eth: { title: "메르 이더리움", issuedUnit: "메르 이더리움", nativeUnit: "이더리움" },
           sol: { title: "메르 솔라나", issuedUnit: "메르 솔라나", nativeUnit: "솔라나" },
-          usdc: { title: "메르 달러", issuedUnit: "메르 달러", nativeUnit: "USD 코인" },
+          usdc: { title: "메르 달러", issuedUnit: "메르 달러", nativeUnit: "미국 달러" },
           mer: { title: "메르 글로벌 토큰", issuedUnit: "메르 토큰", nativeUnit: "메르 토큰" }
         }
       }
@@ -300,8 +300,8 @@
         ratio: "100%",
         iconImg: "MERBTC.jpg",
         totalSupply: "100",
-        circulatingSupply: "100",
-        nativeReserve: "100",
+        circulatingSupply: "0",
+        nativeReserve: "0",
         addresses: [
           { type: 'chainBTC', address: 'bc1pjqpn93pr5cgu8z5xhgmmgspeeea8wls9ndlfjwp8fjfcjltxyhmqhpuq3g' }
         ]
@@ -311,8 +311,8 @@
         ratio: "100%",
         iconImg: "MERETH.jpg",
         totalSupply: "1,000,000",
-        circulatingSupply: "1,000,000",
-        nativeReserve: "1,000,000",
+        circulatingSupply: "0",
+        nativeReserve: "0",
         addresses: [
           { type: 'chainETH', address: '0xbb1512197cb1796e1e84d86f6e7f93a6ef6ba213' }
         ]
@@ -322,8 +322,8 @@
         ratio: "100%",
         iconImg: "MERSOL.jpg",
         totalSupply: "10,000,000",
-        circulatingSupply: "10,000,000",
-        nativeReserve: "10,000,000",
+        circulatingSupply: "0",
+        nativeReserve: "0",
         addresses: [
           { type: 'chainSOL', address: '8r2sbnoC9qcno1cRNab5DQokFs284YV7ZqLCXnDJSqj4' }
         ]
@@ -333,8 +333,8 @@
         ratio: "100%",
         iconImg: "MERUSD.jpg",
         totalSupply: "9,999,999,996",
-        circulatingSupply: "9,999,999,996",
-        nativeReserve: "9,999,999,996",
+        circulatingSupply: "0",
+        nativeReserve: "0",
         addresses: [
           { type: 'chainETH', address: '0xbb1512197cb1796e1e84d86f6e7f93a6ef6ba213' },
           { type: 'chainSOL', address: '8r2sbnoC9qcno1cRNab5DQokFs284YV7ZqLCXnDJSqj4' }
@@ -346,8 +346,8 @@
         ratio: "100%",
         iconImg: "MER.JPG",
         totalSupply: "100,000,000",
-        circulatingSupply: "100,000,000",
-        nativeReserve: "100,000,000",
+        circulatingSupply: "0",
+        nativeReserve: "0",
         addresses: [
           { type: 'chainSOL', address: 'Hap3PEhpHFbppTbt8A94P8xQhTLpKsQwnsFMU3rWkSL' }
         ]
