@@ -153,7 +153,7 @@
 
   <footer class="relative z-10 border-t border-slate-800/80 mt-12 sm:mt-16 py-6 sm:py-8 text-center text-xs text-slate-500">
     <div class="max-w-5xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4">
-      <div>© MER Global <span id="txtFooterRights">All rights reserved.</span></div>
+      <div>© <span id="txtFooterBrand">MER Global</span> <span id="txtFooterRights">All rights reserved.</span></div>
       <div class="flex items-center gap-3 sm:gap-4 text-slate-400">
         <span class="inline-flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand-500"></span> <span id="txtFooterVerified">Cryptographically Verified</span></span>
         <span>|</span>
@@ -181,20 +181,28 @@
         reserveAddresses: "Reserve Addresses",
         copy: "Copy",
         copied: "Copied!",
+        footerBrand: "MER Global",
         footerRights: "All rights reserved.",
         footerVerified: "Cryptographically Verified",
         footerTransparency: "On-Chain Transparency",
         chainBTC: "Bitcoin Native",
         chainETH: "Ethereum (ERC-20)",
-        chainSOL: "Solana Network"
+        chainSOL: "Solana Network",
+        tokens: {
+          btc: { merSymbol: "MERBTC", name: "Bitcoin", nativeSymbol: "BTC" },
+          eth: { merSymbol: "MERETH", name: "Ethereum", nativeSymbol: "ETH" },
+          sol: { merSymbol: "MERSOL", name: "Solana", nativeSymbol: "SOL" },
+          usdc: { merSymbol: "MERUSD", name: "USD Coin", nativeSymbol: "USDC" },
+          mer: { merSymbol: "MER", name: "MER Global Token", nativeSymbol: "MER" }
+        }
       },
       zh: {
-        title: "MER 储备金证明",
+        title: "梅尔储备金证明",
         subtitle: "100% 资产准备金保证",
         status: "实时审计中",
         lastAuditLabel: "上次验证时间 (UTC+8)",
         lastAuditValue: "2026年9月15日 上午12:00",
-        notice: "所有MER发行的币种均保持>=流通的代币比例",
+        notice: "所有由梅尔发行的币种均保持>=流通的代币比例",
         ratioLabel: "储备金率",
         totalSupplyLabel: "发行数量",
         circulatingSupplyLabel: "流通数量",
@@ -205,20 +213,28 @@
         reserveAddresses: "储备金地址",
         copy: "复制",
         copied: "已复制！",
+        footerBrand: "梅尔全球",
         footerRights: "保留所有版权",
         footerVerified: "密码学验证",
         footerTransparency: "链上透明度",
-        chainBTC: "Bitcoin 原生链",
-        chainETH: "Ethereum (ERC-20)",
-        chainSOL: "Solana 网络"
+        chainBTC: "比特币原生链",
+        chainETH: "以太坊 (ERC-20)",
+        chainSOL: "索拉纳网络",
+        tokens: {
+          btc: { merSymbol: "梅尔BTC", name: "比特币", nativeSymbol: "BTC" },
+          eth: { merSymbol: "梅尔ETH", name: "以太坊", nativeSymbol: "ETH" },
+          sol: { merSymbol: "梅尔SOL", name: "索拉纳", nativeSymbol: "SOL" },
+          usdc: { merSymbol: "梅尔USD", name: "美元稳定币", nativeSymbol: "USDC" },
+          mer: { merSymbol: "梅尔", name: "梅尔全球代币", nativeSymbol: "梅尔" }
+        }
       },
       zht: {
-        title: "MER 儲備金證明",
+        title: "梅爾儲備金證明",
         subtitle: "100% 資產準備金保證",
         status: "實時審計中",
         lastAuditLabel: "上次驗證時間 (UTC+8)",
         lastAuditValue: "2026年9月15日 上午12:00",
-        notice: "所有MER發行的幣種均保持>=流通的代幣比例",
+        notice: "所有由梅爾發行的幣種均保持>=流通的代幣比例",
         ratioLabel: "儲備金率",
         totalSupplyLabel: "發行數量",
         circulatingSupplyLabel: "流通數量",
@@ -229,41 +245,58 @@
         reserveAddresses: "儲備金地址",
         copy: "複製",
         copied: "已複製！",
+        footerBrand: "梅爾全球",
         footerRights: "保留所有版權",
         footerVerified: "密碼學驗證",
-        footerTransparency: "鏈上網路"
+        footerTransparency: "鏈上透明度",
+        chainBTC: "比特幣原生鏈",
+        chainETH: "以太坊 (ERC-20)",
+        chainSOL: "索拉納網路",
+        tokens: {
+          btc: { merSymbol: "梅爾BTC", name: "比特幣", nativeSymbol: "BTC" },
+          eth: { merSymbol: "梅爾ETH", name: "以太坊", nativeSymbol: "ETH" },
+          sol: { merSymbol: "梅爾SOL", name: "索拉納", nativeSymbol: "SOL" },
+          usdc: { merSymbol: "梅爾USD", name: "美元穩定幣", nativeSymbol: "USDC" },
+          mer: { merSymbol: "梅爾", name: "梅爾全球代幣", nativeSymbol: "梅爾" }
+        }
       },
       ko: {
-        title: "MER 준비금 증명",
+        title: "메르 준비금 증명",
         subtitle: "100% 자산 준비금 보증",
         status: "실시간 감사 중",
         lastAuditLabel: "마지막 검증 시간 (UTC+8)",
         lastAuditValue: "2026년 9월 15일 오전 12:00",
-        notice: "모든 MER 발행 토큰은 유통량 대비 >= 비율을 유지합니다.",
+        notice: "모든 메르 발행 토큰은 유통량 대비 >= 비율을 유지합니다.",
         ratioLabel: "준비율",
         totalSupplyLabel: "발행 수량",
         circulatingSupplyLabel: "유통 수량",
         nativeReserveLabel: "원본 자산 수량",
         reserveLabel: "준비금 잔액",
         backedAsset: "담보 자산:",
-        nativeToken: "MER Global Token",
+        nativeToken: "메르 글로벌 토큰",
         reserveAddresses: "준비금 주소",
         copy: "복사",
         copied: "복사됨!",
-        footerRights: "모든 권리 보유",
+        footerBrand: "메르 글로벌",
+        footerRights: "모든 권리 보유.",
         footerVerified: "암호학적 검증됨",
         footerTransparency: "체인 상 투명성",
         chainBTC: "비트코인 네이티브",
         chainETH: "이더리움 (ERC-20)",
-        chainSOL: "솔라나 네트워크"
+        chainSOL: "솔라나 네트워크",
+        tokens: {
+          btc: { merSymbol: "메르BTC", name: "비트코인", nativeSymbol: "BTC" },
+          eth: { merSymbol: "메르ETH", name: "이더리움", nativeSymbol: "ETH" },
+          sol: { merSymbol: "메르SOL", name: "솔라나", nativeSymbol: "SOL" },
+          usdc: { merSymbol: "메르USD", name: "USD 코인", nativeSymbol: "USDC" },
+          mer: { merSymbol: "메르", name: "메르 글로벌 토큰", nativeSymbol: "메르" }
+        }
       }
     };
 
     const reservesData = [
       {
-        name: "Bitcoin",
-        symbol: "BTC",
-        merSymbol: "MERBTC",
+        key: "btc",
         ratio: "100%",
         iconImg: "MERBTC.jpg",
         totalSupply: "100",
@@ -274,9 +307,7 @@
         ]
       },
       {
-        name: "Ethereum",
-        symbol: "ETH",
-        merSymbol: "MERETH",
+        key: "eth",
         ratio: "100%",
         iconImg: "MERETH.jpg",
         totalSupply: "1,000,000",
@@ -287,9 +318,7 @@
         ]
       },
       {
-        name: "Solana",
-        symbol: "SOL",
-        merSymbol: "MERSOL",
+        key: "sol",
         ratio: "100%",
         iconImg: "MERSOL.jpg",
         totalSupply: "10,000,000",
@@ -300,9 +329,7 @@
         ]
       },
       {
-        name: "USD Coin",
-        symbol: "USDC",
-        merSymbol: "MERUSD",
+        key: "usdc",
         ratio: "100%",
         iconImg: "MERUSD.jpg",
         totalSupply: "9,999,999,996",
@@ -314,10 +341,8 @@
         ]
       },
       {
+        key: "mer",
         isMer: true,
-        name: "MER Global Token",
-        symbol: "MER",
-        merSymbol: "MER",
         ratio: "100%",
         iconImg: "MER.JPG",
         totalSupply: "100,000,000",
@@ -333,6 +358,9 @@
 
     function updatePageText() {
       const t = i18n[currentLang];
+      document.title = t.title;
+      document.documentElement.lang = currentLang;
+
       document.getElementById('txtTitle').innerText = t.title;
       document.getElementById('txtSubtitle').innerText = t.subtitle;
       document.getElementById('txtStatus').innerText = t.status;
@@ -340,6 +368,7 @@
       document.getElementById('txtLastAuditValue').innerText = t.lastAuditValue;
       document.getElementById('txtNotice').innerText = t.notice;
       
+      document.getElementById('txtFooterBrand').innerText = t.footerBrand;
       document.getElementById('txtFooterRights').innerText = t.footerRights;
       document.getElementById('txtFooterVerified').innerText = t.footerVerified;
       document.getElementById('txtFooterTransparency').innerText = t.footerTransparency;
@@ -371,6 +400,7 @@
       const container = document.getElementById('reservesList');
       
       container.innerHTML = reservesData.map(function(item) {
+        const tokenMeta = t.tokens[item.key];
         const addressesHtml = item.addresses.map(function(addrObj) {
           const chainLabel = t[addrObj.type] || addrObj.type;
           const shortAddr = addrObj.address 
@@ -398,8 +428,7 @@
             '</div>';
         }).join('');
 
-        const symbolLabel = item.isMer ? item.symbol : item.merSymbol;
-        const subLabel = item.isMer ? t.nativeToken : (t.backedAsset + ' ' + item.symbol);
+        const subLabel = item.isMer ? t.nativeToken : (t.backedAsset + ' ' + tokenMeta.nativeSymbol);
         const reserveText = item.isMer ? t.reserveLabel : t.nativeReserveLabel;
         const gridCols = item.addresses.length > 1 ? 'sm:grid-cols-2' : '';
 
@@ -407,16 +436,16 @@
             '<div class="flex justify-between items-center pb-3 border-b border-slate-800/80">' +
               '<div class="flex items-center gap-3 sm:gap-3.5 min-w-0">' +
                 '<div class="relative shrink-0">' +
-                  '<img src="' + item.iconImg + '" alt="' + item.merSymbol + '" ' +
-                       'onerror="this.src=\'https://via.placeholder.com/40/111827/ffffff?text=' + item.symbol + '\'" ' +
+                  '<img src="' + item.iconImg + '" alt="' + tokenMeta.merSymbol + '" ' +
+                       'onerror="this.src=\'https://via.placeholder.com/40/111827/ffffff?text=' + tokenMeta.nativeSymbol + '\'" ' +
                        'class="w-10 h-10 sm:w-11 sm:h-11 rounded-full object-cover border-2 border-slate-700/60 shadow-md group-hover:scale-105 transition duration-300">' +
                   '<span class="absolute -bottom-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-brand-500 text-[9px] text-black font-extrabold shadow">✓</span>' +
                 '</div>' +
                 '<div class="min-w-0">' +
                   '<div class="flex items-center gap-1.5 sm:gap-2">' +
-                    '<h3 class="text-sm sm:text-base font-bold text-white tracking-wide truncate">' + symbolLabel + '</h3>' +
+                    '<h3 class="text-sm sm:text-base font-bold text-white tracking-wide truncate">' + tokenMeta.merSymbol + '</h3>' +
                     '<span class="text-[9px] sm:text-[10px] font-semibold px-1.5 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700/50 shrink-0">' +
-                      item.name +
+                      tokenMeta.name +
                     '</span>' +
                   '</div>' +
                   '<span class="text-[11px] sm:text-xs text-slate-400 font-mono truncate block">' + subLabel + '</span>' +
@@ -438,21 +467,21 @@
                   '<span class="w-1.5 h-1.5 rounded-full bg-slate-500 shrink-0"></span>' +
                   t.totalSupplyLabel +
                 '</span>' +
-                '<span class="text-sm sm:text-base font-bold text-slate-100 font-mono tracking-tight">' + item.totalSupply + ' <span class="text-xs text-slate-400 font-sans font-normal">' + item.merSymbol + '</span></span>' +
+                '<span class="text-sm sm:text-base font-bold text-slate-100 font-mono tracking-tight">' + item.totalSupply + ' <span class="text-xs text-slate-400 font-sans font-normal">' + tokenMeta.merSymbol + '</span></span>' +
               '</div>' +
               '<div class="bg-slate-950/60 border border-slate-800/60 group-hover:border-slate-700/50 rounded-xl p-3 sm:p-3.5 flex flex-col justify-between transition-colors">' +
                 '<span class="text-[10px] sm:text-[11px] font-medium text-slate-400 mb-1 flex items-center gap-1.5">' +
                   '<span class="w-1.5 h-1.5 rounded-full bg-blue-400 shrink-0"></span>' +
                   t.circulatingSupplyLabel +
                 '</span>' +
-                '<span class="text-sm sm:text-base font-bold text-slate-100 font-mono tracking-tight">' + item.circulatingSupply + ' <span class="text-xs text-slate-400 font-sans font-normal">' + item.merSymbol + '</span></span>' +
+                '<span class="text-sm sm:text-base font-bold text-slate-100 font-mono tracking-tight">' + item.circulatingSupply + ' <span class="text-xs text-slate-400 font-sans font-normal">' + tokenMeta.merSymbol + '</span></span>' +
               '</div>' +
               '<div class="bg-slate-950/60 border border-slate-800/60 group-hover:border-slate-700/50 rounded-xl p-3 sm:p-3.5 flex flex-col justify-between transition-colors">' +
                 '<span class="text-[10px] sm:text-[11px] font-medium text-slate-400 mb-1 flex items-center gap-1.5">' +
                   '<span class="w-1.5 h-1.5 rounded-full bg-brand-400 shrink-0"></span>' +
                   reserveText +
                 '</span>' +
-                '<span class="text-sm sm:text-base font-bold text-brand-400 font-mono tracking-tight">' + item.nativeReserve + ' <span class="text-xs text-slate-400 font-sans font-normal">' + item.symbol + '</span></span>' +
+                '<span class="text-sm sm:text-base font-bold text-brand-400 font-mono tracking-tight">' + item.nativeReserve + ' <span class="text-xs text-slate-400 font-sans font-normal">' + tokenMeta.nativeSymbol + '</span></span>' +
               '</div>' +
             '</div>' +
             '<div class="pt-2 border-t border-slate-800/60 space-y-2">' +
