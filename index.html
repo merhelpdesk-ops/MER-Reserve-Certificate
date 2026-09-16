@@ -89,7 +89,7 @@
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between gap-3">
       
       <div class="flex items-center shrink-0">
-        <img src="merlogo.webp" alt="MER Reserve" class="h-7 sm:h-8 w-auto object-contain shrink-0 max-w-[160px] sm:max-w-[220px]">
+        <img src="merlogo.webp" alt="MER Reserve" class="h-9 sm:h-11 md:h-12 w-auto object-contain shrink-0 max-w-[220px] sm:max-w-[320px]">
       </div>
 
       <div class="flex items-center gap-2 sm:gap-3 shrink-0">
@@ -231,10 +231,7 @@
         copied: "已複製！",
         footerRights: "保留所有版權",
         footerVerified: "密碼學驗證",
-        footerTransparency: "鏈上透明度",
-        chainBTC: "Bitcoin 原生鏈",
-        chainETH: "Ethereum (ERC-20)",
-        chainSOL: "Solana 網路"
+        footerTransparency: "鏈上網路"
       },
       ko: {
         title: "MER 준비금 증명",
@@ -365,7 +362,7 @@
           btn.classList.add('bg-slate-800', 'text-slate-300');
         }, 1800);
       }).catch(err => {
-        console.error('Copy failed', err);
+        console.error(err);
       });
     }
 
