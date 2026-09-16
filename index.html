@@ -6,6 +6,8 @@
   <title>MER Proof of Reserves</title>
   
   <link rel="canonical" href="https://reserve.mer.finance/" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://reserve.mer.finance/">
@@ -41,14 +43,13 @@
           colors: {
             brand: {
               50: '#f0fdf4',
-              300: '#86efac',
               400: '#4ade80',
               500: '#22c55e',
               600: '#16a34a',
-              950: '#052e16',
+              900: '#052e16',
             },
             dark: {
-              bg: '#05070a',
+              bg: '#070a0f',
               card: '#0f172a',
               cardHover: '#131d33',
               border: '#1e293b',
@@ -56,84 +57,59 @@
             }
           },
           boxShadow: {
-            'glow-emerald': '0 0 20px -2px rgba(34, 197, 94, 0.3)',
-            'glow-card': '0 10px 40px -15px rgba(0, 0, 0, 0.7)',
-            'inner-glow': 'inset 0 1px 1px rgba(255, 255, 255, 0.03)',
-          },
-          backdropBlur: {
-            'xs': '2px',
+            'glow-emerald': '0 0 25px -5px rgba(34, 197, 94, 0.25)',
+            'glow-card': '0 10px 30px -10px rgba(0, 0, 0, 0.5)',
           }
         }
       }
     }
   </script>
   <style>
-    ::-webkit-scrollbar { width: 6px; height: 6px; }
-    ::-webkit-scrollbar-track { background: #05070a; }
-    ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 3px; }
-    ::-webkit-scrollbar-thumb:hover { background: #334155; }
-
-    @keyframes pulse-glow {
-      0%, 100% { opacity: 0.15; }
-      50% { opacity: 0.25; }
+    ::-webkit-scrollbar {
+      width: 6px;
     }
-    .animate-pulse-glow { animation: pulse-glow 8s ease-in-out infinite; }
-    
-    @keyframes progress-shine {
-      from { transform: translateX(-100%); }
-      to { transform: translateX(100%); }
+    ::-webkit-scrollbar-track {
+      background: #070a0f;
     }
-    .progress-bar-shine {
-      position: relative; overflow: hidden;
+    ::-webkit-scrollbar-thumb {
+      background: #1e293b;
+      border-radius: 3px;
     }
-    .progress-bar-shine::after {
-      content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-      animation: progress-shine 2s infinite linear;
+    ::-webkit-scrollbar-thumb:hover {
+      background: #334155;
     }
-
-    .text-gradient-emerald {
-      background: linear-gradient(135deg, #a7f3d0 0%, #34d399 50%, #10b981 100%);
-      -webkit-background-clip: text; background-clip: text;
-      -webkit-text-fill-color: transparent; text-fill-color: transparent;
-    }
-    
-    .hover-float { transition: transform 0.3s ease, box-shadow 0.3s ease; }
-    .hover-float:hover { transform: translateY(-3px); }
-
-    ::selection { background-color: rgba(34, 197, 94, 0.3); color: white; }
   </style>
 </head>
-<body class="bg-dark-bg text-slate-200 min-h-screen font-sans antialiased relative overflow-x-hidden">
+<body class="bg-dark-bg text-slate-100 min-h-screen font-sans antialiased selection:bg-brand-500 selection:text-white relative overflow-x-hidden">
 
-  <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[900px] h-[400px] bg-brand-600/10 blur-[130px] pointer-events-none rounded-full z-0 animate-pulse-glow"></div>
-  <div class="fixed bottom-0 right-0 w-[600px] h-[600px] bg-blue-700/5 blur-[180px] pointer-events-none rounded-full z-0 animate-pulse-glow" style="animation-delay: -4s;"></div>
+  <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[350px] bg-brand-500/10 blur-[130px] pointer-events-none rounded-full z-0"></div>
+  <div class="fixed bottom-0 right-0 w-[500px] h-[500px] bg-blue-600/5 blur-[160px] pointer-events-none rounded-full z-0"></div>
 
-  <header class="border-b border-slate-800/60 bg-dark-bg/60 backdrop-blur-xl sticky top-0 z-50 shadow-inner-glow">
-    <div class="max-w-6xl mx-auto px-5 lg:px-8 py-3 flex items-center justify-between gap-4">
+  <header class="border-b border-slate-800/80 bg-dark-bg/80 backdrop-blur-xl sticky top-0 z-50">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between gap-3">
       
       <div class="flex items-center shrink-0">
-        <span class="text-2xl font-black text-white tracking-tighter hover:text-brand-300 transition cursor-pointer">MER<span class="text-brand-500">.</span></span>
+        <img src="merlogo.webp" alt="MER Reserve" class="h-9 sm:h-11 md:h-12 w-auto object-contain shrink-0 max-w-[220px] sm:max-w-[320px]">
       </div>
 
-      <div class="flex items-center gap-3 shrink-0">
-        <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-[11px] font-bold bg-brand-950 text-brand-300 border border-brand-500/30 whitespace-nowrap shadow-inner-glow">
-          <span class="relative flex h-2.5 w-2.5 shrink-0">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-60"></span>
-            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-brand-500 shadow-glow-emerald"></span>
+      <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-semibold bg-brand-500/10 text-brand-400 border border-brand-500/20 whitespace-nowrap">
+          <span class="relative flex h-2 w-2 shrink-0">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-500"></span>
           </span>
-          <span id="txtStatus" class="tracking-wide uppercase">Real-Time Audited</span>
+          <span id="txtStatus" class="whitespace-nowrap">Real-Time Audited</span>
         </span>
 
         <div class="relative shrink-0">
-          <select id="langSelect" class="appearance-none bg-slate-900/60 border border-slate-700/80 hover:border-slate-600 text-[11px] sm:text-xs text-slate-300 pl-3 pr-8 py-1.5 rounded-xl focus:outline-none focus:ring-1 focus:ring-brand-500/50 focus:border-brand-500/50 cursor-pointer font-medium backdrop-blur-sm transition-all shadow-inner">
-            <option value="en" selected>EN</option>
-            <option value="zh">简体</option>
-            <option value="zht">繁體</option>
+          <select id="langSelect" class="appearance-none bg-slate-900 border border-slate-700/80 hover:border-slate-600 text-[11px] sm:text-xs text-slate-200 pl-2.5 pr-6 sm:pl-3 sm:pr-8 py-1 sm:py-1.5 rounded-lg sm:rounded-xl focus:outline-none focus:ring-1 focus:ring-brand-500/50 cursor-pointer font-medium">
+            <option value="en" selected>English</option>
+            <option value="zh">简体中文</option>
+            <option value="zht">繁體中文</option>
             <option value="ko">한국어</option>
           </select>
-          <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-slate-500">
-            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+          <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-1.5 text-slate-400">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
           </div>
         </div>
       </div>
@@ -141,52 +117,47 @@
     </div>
   </header>
 
-  <main class="relative z-10 max-w-6xl mx-auto px-5 lg:px-8 py-8 sm:py-12 space-y-10">
+  <main class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 space-y-6">
 
-    <div class="space-y-2 text-center sm:text-left max-w-3xl">
-      <h1 class="text-2xl sm:text-4xl font-black text-white tracking-tighter" id="txtTitle">
+    <div class="space-y-1 pt-1 pb-2">
+      <h1 class="text-xl sm:text-3xl font-extrabold text-white tracking-tight" id="txtTitle">
         MER Proof of Reserves
       </h1>
-      <p class="text-sm sm:text-lg text-slate-400 font-medium leading-relaxed" id="txtSubtitle">
-        Completely Transparent, 100% Backed Reserve Guarantee for all issued assets.
+      <p class="text-xs sm:text-sm text-slate-400 font-medium" id="txtSubtitle">
+        100% Backed Reserve Guarantee
       </p>
     </div>
 
-    <div class="relative overflow-hidden bg-slate-900/40 backdrop-blur-md border border-slate-800 p-5 sm:p-7 rounded-3xl shadow-glow-card hover:border-slate-700/80 transition-all flex flex-col sm:flex-row justify-between items-start sm:items-center gap-5">
-      <div class="absolute -right-20 -top-20 w-52 h-52 bg-brand-500/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="relative overflow-hidden bg-gradient-to-r from-slate-900/90 via-dark-card to-slate-900/90 border border-slate-800 p-5 sm:p-6 rounded-2xl shadow-glow-card flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-5">
+      <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-brand-500/5 rounded-full blur-2xl pointer-events-none"></div>
       
-      <div class="space-y-1.5 relative z-10">
-        <div class="flex items-center gap-2.5">
-          <div class="p-1.5 rounded-lg bg-slate-800 border border-slate-700/80 text-brand-400 shadow-inner">
-            <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-          </div>
-          <span class="text-xs font-bold text-slate-400 uppercase tracking-widest whitespace-nowrap" id="txtLastAuditLabel">Last Cryptographic Verification (UTC+8)</span>
+      <div class="space-y-1">
+        <div class="flex items-center gap-2">
+          <svg class="w-4 h-4 text-brand-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider whitespace-nowrap" id="txtLastAuditLabel">Last Verification (UTC+8)</span>
         </div>
-        <div class="text-2xl sm:text-3xl font-extrabold text-white font-mono tracking-tight pl-10" id="txtLastAuditValue">Sep 15, 2026 12:00:00 AM</div>
+        <div class="text-lg sm:text-2xl font-extrabold text-white font-mono tracking-tight" id="txtLastAuditValue">Sep 15, 2026 12:00 AM</div>
       </div>
 
-      <div class="flex items-start gap-3.5 bg-slate-950/60 border border-slate-800/80 p-4 sm:p-5 rounded-2xl max-w-md w-full sm:w-auto shadow-inner relative z-10">
-        <svg class="w-6 h-6 text-brand-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal" id="txtNotice">
-          This verification confirms that all tokens issued by MER maintain a reserve ratio of no less than 100% against their circulating supply.
+      <div class="flex items-start gap-3 bg-slate-950/40 border border-slate-800/80 p-3 sm:p-3.5 rounded-xl max-w-md w-full sm:w-auto">
+        <svg class="w-5 h-5 text-brand-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+        <p class="text-xs text-slate-300 leading-relaxed font-normal" id="txtNotice">
+          All tokens issued by MER maintain a ratio >= circulating supply.
         </p>
       </div>
     </div>
 
-    <div id="reservesList" class="space-y-6"></div>
+    <div id="reservesList" class="space-y-4"></div>
 
   </main>
 
-  <footer class="relative z-10 border-t border-slate-800/60 mt-20 sm:mt-24 py-8 sm:py-10 text-center text-xs text-slate-500 bg-slate-950/40">
-    <div class="max-w-6xl mx-auto px-5 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-5 sm:gap-6">
-      <div class="font-medium tracking-wide">© 2026 MER Global. <span id="txtFooterRights">Cryptographic Transparency. All rights reserved.</span></div>
-      <div class="flex flex-wrap items-center justify-center gap-4 sm:gap-5 text-slate-400">
-        <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 border border-slate-800">
-          <span class="w-1.5 h-1.5 rounded-full bg-brand-500 shadow-glow-emerald"></span> 
-          <span id="txtFooterVerified" class="text-[11px] font-semibold">Merkle Tree Verified</span>
-        </span>
-        <span class="text-slate-700 hidden sm:inline">|</span>
-        <span id="txtFooterTransparency" class="text-[11px] font-medium tracking-wide">On-Chain Real-Time Transparency</span>
+  <footer class="relative z-10 border-t border-slate-800/80 mt-12 sm:mt-16 py-6 sm:py-8 text-center text-xs text-slate-500">
+    <div class="max-w-5xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4">
+      <div>© MER Global <span id="txtFooterRights">All rights reserved.</span></div>
+      <div class="flex items-center gap-3 sm:gap-4 text-slate-400">
+        <span class="inline-flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand-500"></span> <span id="txtFooterVerified">Cryptographically Verified</span></span>
+        <span>|</span>
+        <span id="txtFooterTransparency">On-Chain Transparency</span>
       </div>
     </div>
   </footer>
@@ -195,105 +166,167 @@
     const i18n = {
       en: {
         title: "MER Proof of Reserves",
-        subtitle: "Completely Transparent, 100% Backed Reserve Guarantee for all issued assets.",
+        subtitle: "100% Backed Reserve Guarantee",
         status: "Real-Time Audited",
-        lastAuditLabel: "Last Cryptographic Verification (UTC+8)",
-        lastAuditValue: "Sep 15, 2026 12:00:00 AM",
-        notice: "This verification confirms that all tokens issued by MER maintain a reserve ratio of no less than 100% against their circulating supply.",
-        ratioLabel: "Current Ratio",
+        lastAuditLabel: "Last Verification (UTC+8)",
+        lastAuditValue: "Sep 15, 2026 12:00 AM",
+        notice: "All tokens issued by MER maintain a ratio >= circulating supply.",
+        ratioLabel: "Reserve Ratio",
         totalSupplyLabel: "Total Issued",
         circulatingSupplyLabel: "Circulating Supply",
-        nativeReserveLabel: "Native Reserve On-Chain",
+        nativeReserveLabel: "Native Reserves",
         reserveLabel: "Reserve Balance",
-        backedAsset: "Backed Asset",
-        nativeToken: "MER Global Native",
-        reserveAddresses: "Verified Reserve Addresses",
+        backedAsset: "Backed Asset:",
+        nativeToken: "MER Global Token",
+        reserveAddresses: "Reserve Addresses",
         copy: "Copy",
         copied: "Copied!",
-        footerRights: "Cryptographic Transparency. All rights reserved.",
-        footerVerified: "Merkle Tree Verified",
-        footerTransparency: "On-Chain Real-Time Transparency",
+        footerRights: "All rights reserved.",
+        footerVerified: "Cryptographically Verified",
+        footerTransparency: "On-Chain Transparency",
         chainBTC: "Bitcoin Native",
-        chainETH: "Ethereum",
+        chainETH: "Ethereum (ERC-20)",
         chainSOL: "Solana Network"
       },
       zh: {
         title: "MER 储备金证明",
-        subtitle: "100% 资产准备金保证，所有发行的资产均受链上完全透明保护。",
+        subtitle: "100% 资产准备金保证",
         status: "实时审计中",
-        lastAuditLabel: "上次密码学验证时间 (UTC+8)",
-        lastAuditValue: "2026年9月15日 00:00:00",
-        notice: "本次验证确认，所有 MER 发行的代币均对其流通供应量保持不低于 100% 的储备比例。",
-        ratioLabel: "当前储备率",
-        totalSupplyLabel: "总发行数量",
-        circulatingSupplyLabel: "当前流通数量",
-        nativeReserveLabel: "链上原生资产数量",
-        reserveLabel: "储备金余额",
-        backedAsset: "支持资产",
-        nativeToken: "梅尔全球原生代币",
-        reserveAddresses: "经验证的储备金地址",
+        lastAuditLabel: "上次验证时间 (UTC+8)",
+        lastAuditValue: "2026年9月15日 上午12:00",
+        notice: "所有MER发行的币种均保持>=流通的代币比例",
+        ratioLabel: "储备金率",
+        totalSupplyLabel: "发行数量",
+        circulatingSupplyLabel: "流通数量",
+        nativeReserveLabel: "原生资产数量",
+        reserveLabel: "储备余额",
+        backedAsset: "支持资产：",
+        nativeToken: "梅尔全球代币",
+        reserveAddresses: "储备金地址",
         copy: "复制",
         copied: "已复制！",
-        footerRights: "密码学透明保证。保留所有版权。",
-        footerVerified: "默克尔树密码学验证",
-        footerTransparency: "链上实时透明",
+        footerRights: "保留所有版权",
+        footerVerified: "密码学验证",
+        footerTransparency: "链上透明度",
         chainBTC: "Bitcoin 原生链",
-        chainETH: "Ethereum 链",
+        chainETH: "Ethereum (ERC-20)",
         chainSOL: "Solana 网络"
       },
       zht: {
         title: "MER 儲備金證明",
-        subtitle: "100% 資產準備金保證，所有發行的資產均受鏈上完全透明保護。",
+        subtitle: "100% 資產準備金保證",
         status: "實時審計中",
-        lastAuditLabel: "上次密碼學驗證時間 (UTC+8)",
-        lastAuditValue: "2026年9月15日 00:00:00",
-        notice: "本次驗證確認，所有 MER 發行的代幣均對其流通供應量保持不低於 100% 的儲備比例。",
-        ratioLabel: "當前儲備率",
-        totalSupplyLabel: "總發行數量",
-        circulatingSupplyLabel: "當前流通數量",
-        nativeReserveLabel: "鏈上原生資產數量",
-        reserveLabel: "儲備金餘額",
-        backedAsset: "支持資產",
-        nativeToken: "梅爾全球原生代幣",
-        reserveAddresses: "經驗證的儲備金地址",
+        lastAuditLabel: "上次驗證時間 (UTC+8)",
+        lastAuditValue: "2026年9月15日 上午12:00",
+        notice: "所有MER發行的幣種均保持>=流通的代幣比例",
+        ratioLabel: "儲備金率",
+        totalSupplyLabel: "發行數量",
+        circulatingSupplyLabel: "流通數量",
+        nativeReserveLabel: "原生資產數量",
+        reserveLabel: "儲備餘額",
+        backedAsset: "支持資產：",
+        nativeToken: "梅爾全球代幣",
+        reserveAddresses: "儲備金地址",
         copy: "複製",
         copied: "已複製！",
-        footerRights: "密碼學透明保證。保留所有版權。",
-        footerVerified: "默克爾樹密碼學驗證",
-        footerTransparency: "鏈上實時透明"
+        footerRights: "保留所有版權",
+        footerVerified: "密碼學驗證",
+        footerTransparency: "鏈上網路"
       },
       ko: {
         title: "MER 준비금 증명",
-        subtitle: "완전한 투명성, 발행된 모든 자산에 대한 100% 담보 준비금 보증.",
+        subtitle: "100% 자산 준비금 보증",
         status: "실시간 감사 중",
-        lastAuditLabel: "마지막 암호학적 검증 시간 (UTC+8)",
-        lastAuditValue: "2026년 9월 15일 00:00:00",
-        notice: "이 검증은 MER가 발행한 모든 토큰이 유통 공급량 대비 100% 이상의 준비금 비율을 유지하고 있음을 확인합니다.",
-        ratioLabel: "현재 준비율",
-        totalSupplyLabel: "총 발행 수량",
-        circulatingSupplyLabel: "현재 유통 수량",
-        nativeReserveLabel: "온체인 원본 자산 수량",
+        lastAuditLabel: "마지막 검증 시간 (UTC+8)",
+        lastAuditValue: "2026년 9월 15일 오전 12:00",
+        notice: "모든 MER 발행 토큰은 유통량 대비 >= 비율을 유지합니다.",
+        ratioLabel: "준비율",
+        totalSupplyLabel: "발행 수량",
+        circulatingSupplyLabel: "유통 수량",
+        nativeReserveLabel: "원본 자산 수량",
         reserveLabel: "준비금 잔액",
-        backedAsset: "담보 자산",
-        nativeToken: "MER Global Native",
-        reserveAddresses: "검증된 준비금 주소",
+        backedAsset: "담보 자산:",
+        nativeToken: "MER Global Token",
+        reserveAddresses: "준비금 주소",
         copy: "복사",
         copied: "복사됨!",
-        footerRights: "암호학적 투명성 보장. 모든 권리 보유.",
-        footerVerified: "머클 트리 검증됨",
-        footerTransparency: "온체인 실시간 투명성",
+        footerRights: "모든 권리 보유",
+        footerVerified: "암호학적 검증됨",
+        footerTransparency: "체인 상 투명성",
         chainBTC: "비트코인 네이티브",
-        chainETH: "이더리움",
+        chainETH: "이더리움 (ERC-20)",
         chainSOL: "솔라나 네트워크"
       }
     };
 
     const reservesData = [
-      { name: "Bitcoin", symbol: "BTC", merSymbol: "MERBTC", ratio: "100%", iconImg: "https://cryptologos.cc/logos/bitcoin-btc-logo.svg?v=026", totalSupply: "100", circulatingSupply: "0", nativeReserve: "0", addresses: [{ type: 'chainBTC', address: 'bc1pjqpn93pr5cgu8z5xhgmmgspeeea8wls9ndlfjwp8fjfcjltxyhmqhpuq3g' }] },
-      { name: "Ethereum", symbol: "ETH", merSymbol: "MERETH", ratio: "100%", iconImg: "https://cryptologos.cc/logos/ethereum-eth-logo.svg?v=026", totalSupply: "1,000,000", circulatingSupply: "0", nativeReserve: "0", addresses: [{ type: 'chainETH', address: '0xbb1512197cb1796e1e84d86f6e7f93a6ef6ba213' }] },
-      { name: "Solana", symbol: "SOL", merSymbol: "MERSOL", ratio: "100%", iconImg: "https://cryptologos.cc/logos/solana-sol-logo.svg?v=026", totalSupply: "10,000,000", circulatingSupply: "0", nativeReserve: "0", addresses: [{ type: 'chainSOL', address: '8r2sbnoC9qcno1cRNab5DQokFs284YV7ZqLCXnDJSqj4' }] },
-      { name: "USD Coin", symbol: "USDC", merSymbol: "MERUSD", ratio: "100%", iconImg: "https://cryptologos.cc/logos/usd-coin-usdc-logo.svg?v=026", totalSupply: "9,999,999,996", circulatingSupply: "0", nativeReserve: "0", addresses: [{ type: 'chainETH', address: '0xbb1512197cb1796e1e84d86f6e7f93a6ef6ba213' }, { type: 'chainSOL', address: '8r2sbnoC9qcno1cRNab5DQokFs284YV7ZqLCXnDJSqj4' }] },
-      { isMer: true, name: "MER Global Token", symbol: "MER", merSymbol: "MER", ratio: "100%", iconImg: "https://cryptologos.cc/logos/mantle-mntl-logo.svg?v=032", totalSupply: "100,000,000", circulatingSupply: "0", nativeReserve: "100,000,000", addresses: [{ type: 'chainSOL', address: 'Hap3PEhpHFbppTbt8A94P8xQhTLpKsQwnsFMU3rWkSL' }] }
+      {
+        name: "Bitcoin",
+        symbol: "BTC",
+        merSymbol: "MERBTC",
+        ratio: "100%",
+        iconImg: "MERBTC.jpg",
+        totalSupply: "100",
+        circulatingSupply: "0",
+        nativeReserve: "0",
+        addresses: [
+          { type: 'chainBTC', address: 'bc1pjqpn93pr5cgu8z5xhgmmgspeeea8wls9ndlfjwp8fjfcjltxyhmqhpuq3g' }
+        ]
+      },
+      {
+        name: "Ethereum",
+        symbol: "ETH",
+        merSymbol: "MERETH",
+        ratio: "100%",
+        iconImg: "MERETH.jpg",
+        totalSupply: "1,000,000",
+        circulatingSupply: "0",
+        nativeReserve: "0",
+        addresses: [
+          { type: 'chainETH', address: '0xbb1512197cb1796e1e84d86f6e7f93a6ef6ba213' }
+        ]
+      },
+      {
+        name: "Solana",
+        symbol: "SOL",
+        merSymbol: "MERSOL",
+        ratio: "100%",
+        iconImg: "MERSOL.jpg",
+        totalSupply: "10,000,000",
+        circulatingSupply: "0",
+        nativeReserve: "0",
+        addresses: [
+          { type: 'chainSOL', address: '8r2sbnoC9qcno1cRNab5DQokFs284YV7ZqLCXnDJSqj4' }
+        ]
+      },
+      {
+        name: "USD Coin",
+        symbol: "USDC",
+        merSymbol: "MERUSD",
+        ratio: "100%",
+        iconImg: "MERUSD.jpg",
+        totalSupply: "9,999,999,996",
+        circulatingSupply: "0",
+        nativeReserve: "0",
+        addresses: [
+          { type: 'chainETH', address: '0xbb1512197cb1796e1e84d86f6e7f93a6ef6ba213' },
+          { type: 'chainSOL', address: '8r2sbnoC9qcno1cRNab5DQokFs284YV7ZqLCXnDJSqj4' }
+        ]
+      },
+      {
+        isMer: true,
+        name: "MER Global Token",
+        symbol: "MER",
+        merSymbol: "MER",
+        ratio: "100%",
+        iconImg: "MER.JPG",
+        totalSupply: "100,000,000",
+        circulatingSupply: "0",
+        nativeReserve: "100,000,000",
+        addresses: [
+          { type: 'chainSOL', address: 'Hap3PEhpHFbppTbt8A94P8xQhTLpKsQwnsFMU3rWkSL' }
+        ]
+      }
     ];
 
     let currentLang = 'en';
@@ -306,24 +339,27 @@
       document.getElementById('txtLastAuditLabel').innerText = t.lastAuditLabel;
       document.getElementById('txtLastAuditValue').innerText = t.lastAuditValue;
       document.getElementById('txtNotice').innerText = t.notice;
+      
       document.getElementById('txtFooterRights').innerText = t.footerRights;
       document.getElementById('txtFooterVerified').innerText = t.footerVerified;
       document.getElementById('txtFooterTransparency').innerText = t.footerTransparency;
+
       renderReserves();
     }
 
     function copyToClipboard(text, btn) {
       if (!text) return;
       navigator.clipboard.writeText(text).then(() => {
-        const textSpan = btn.querySelector('.copy-text');
+        const textSpan = btn.querySelector('span');
         const origText = textSpan.innerText;
         textSpan.innerText = i18n[currentLang].copied;
-        btn.classList.add('bg-brand-500', 'text-black', 'border-brand-400');
-        btn.classList.remove('bg-slate-800', 'text-slate-300', 'border-slate-700/60');
+        btn.classList.add('bg-brand-500', 'text-slate-950', 'border-brand-400', 'font-bold');
+        btn.classList.remove('bg-slate-800', 'text-slate-300');
+
         setTimeout(() => {
           textSpan.innerText = origText;
-          btn.classList.remove('bg-brand-500', 'text-black', 'border-brand-400');
-          btn.classList.add('bg-slate-800', 'text-slate-300', 'border-slate-700/60');
+          btn.classList.remove('bg-brand-500', 'text-slate-950', 'border-brand-400', 'font-bold');
+          btn.classList.add('bg-slate-800', 'text-slate-300');
         }, 1800);
       }).catch(err => {
         console.error(err);
@@ -338,29 +374,28 @@
         const addressesHtml = item.addresses.map(function(addrObj) {
           const chainLabel = t[addrObj.type] || addrObj.type;
           const shortAddr = addrObj.address 
-            ? (addrObj.address.substring(0, 12) + '...' + addrObj.address.substring(addrObj.address.length - 10))
+            ? (addrObj.address.length > 22 
+                ? addrObj.address.substring(0, 10) + '...' + addrObj.address.substring(addrObj.address.length - 8)
+                : addrObj.address)
             : '';
 
-          return `
-            <div class="flex items-center justify-between gap-3 bg-slate-950/70 border border-slate-800/80 hover:border-slate-700 rounded-xl px-4 py-2.5 text-xs transition group shadow-inner">
-              <div class="flex items-center gap-2.5 min-w-0">
-                <div class="shrink-0 flex items-center justify-center p-1 rounded-md bg-slate-800 border border-slate-700 text-slate-400 group-hover:text-brand-400 group-hover:border-brand-500/30 transition">
-                   <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.5-1.5m1.828-1.828a4 4 0 005.656 0l4-4a4 4 0 10-5.656-5.656l-1.5 1.5"></path></svg>
-                </div>
-                <div class="flex flex-col gap-0.5 min-w-0">
-                  <span class="text-[10px] font-semibold text-slate-500 tracking-wider">${chainLabel}</span>
-                  <span class="font-mono text-slate-200 truncate text-[12px] select-all" title="${addrObj.address}">${shortAddr}</span>
-                </div>
-              </div>
-              <button onclick="copyToClipboard('${addrObj.address}', this)" 
-                      class="shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700/60 transition-all text-[11px] font-semibold active:scale-95 cursor-pointer shadow">
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-                </svg>
-                <span class="copy-text">${t.copy}</span>
-              </button>
-            </div>
-          `;
+          return '<div class="flex items-center justify-between gap-2 bg-slate-950/80 border border-slate-800/80 rounded-xl px-3 py-2 text-xs">' +
+              '<div class="flex items-center gap-2 min-w-0">' +
+                '<span class="text-[10px] sm:text-xs font-semibold text-slate-400 shrink-0 bg-slate-800/80 px-2 py-0.5 rounded border border-slate-700/50">' +
+                  chainLabel +
+                '</span>' +
+                '<span class="font-mono text-slate-300 truncate text-[11px] sm:text-xs select-all" title="' + addrObj.address + '">' +
+                  shortAddr +
+                '</span>' +
+              '</div>' +
+              '<button onclick="copyToClipboard(\'' + addrObj.address + '\', this)" ' +
+                      'class="shrink-0 inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700/60 transition-all text-[11px] font-medium active:scale-95 cursor-pointer">' +
+                '<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">' +
+                  '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>' +
+                '</svg>' +
+                '<span>' + t.copy + '</span>' +
+              '</button>' +
+            '</div>';
         }).join('');
 
         const symbolLabel = item.isMer ? item.symbol : item.merSymbol;
@@ -368,77 +403,71 @@
         const reserveText = item.isMer ? t.reserveLabel : t.nativeReserveLabel;
         const gridCols = item.addresses.length > 1 ? 'sm:grid-cols-2' : '';
 
-        return `
-          <div class="hover-float group relative bg-dark-card border border-slate-800 hover:border-brand-500/40 rounded-3xl p-5 sm:p-6 shadow-glow-card hover:shadow-glow-emerald transition-all duration-300 space-y-5">
-            <div class="flex justify-between items-start gap-4 pb-5 border-b border-slate-800/80">
-              <div class="flex items-center gap-4 min-w-0">
-                <div class="relative shrink-0 p-0.5 rounded-full bg-slate-800 border-2 border-slate-700 shadow-inner group-hover:border-brand-500/50 transition duration-300">
-                  <img src="${item.iconImg}" alt="${item.merSymbol}" 
-                       onerror="this.src='https://via.placeholder.com/48/1e293b/ffffff?text=${item.symbol}'" 
-                       class="w-12 h-12 sm:w-14 sm:h-14 rounded-full object-cover">
-                  <span class="absolute -bottom-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-brand-500 text-black font-extrabold shadow-lg border border-slate-900" style="font-size: 11px;">✓</span>
-                </div>
-                <div class="min-w-0 space-y-0.5">
-                  <div class="flex items-center gap-2.5">
-                    <h3 class="text-lg sm:text-xl font-bold text-white tracking-tight truncate group-hover:text-brand-300 transition">${item.name}</h3>
-                    <span class="text-[10px] sm:text-[11px] uppercase font-bold px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700 group-hover:border-slate-600 transition shrink-0 tracking-wider">${symbolLabel}</span>
-                  </div>
-                  <div class="text-xs sm:text-sm text-slate-400 font-medium truncate flex items-center gap-1.5">
-                    ${item.isMer ? '' : '<svg class="w-3.5 h-3.5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>'}
-                    ${subLabel}
-                  </div>
-                </div>
-              </div>
-              <div class="text-right shrink-0 p-3 sm:p-4 rounded-2xl bg-slate-950/60 border border-slate-800 shadow-inner group-hover:border-brand-500/20 transition">
-                <div class="text-[9px] sm:text-[10px] text-slate-500 uppercase tracking-widest font-bold mb-0.5">${t.ratioLabel}</div>
-                <div class="text-2xl sm:text-3xl font-black text-gradient-emerald font-mono tracking-tighter drop-shadow-[0_0_6px_rgba(52,211,153,0.3)]group-hover:drop-shadow-[0_0_10px_rgba(52,211,153,0.5)] transition">
-                  ${item.ratio}
-                </div>
-              </div>
-            </div>
-
-            <div class="w-full bg-slate-900 h-2 sm:h-2.5 rounded-full overflow-hidden p-px border border-slate-800 shadow-inner group-hover:border-slate-700 transition">
-              <div class="bg-gradient-to-r from-brand-600 via-brand-400 to-brand-300 h-full rounded-full transition-all duration-500 w-full shadow-[0_0_10px_rgba(34,197,94,0.4)] progress-bar-shine group-hover:shadow-[0_0_15px_rgba(34,197,94,0.6)]"></div>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-              <div class="bg-slate-950/50 border border-slate-800/80 group-hover:border-slate-700 rounded-2xl p-4 flex flex-col transition shadow-inner">
-                <span class="text-[11px] sm:text-xs font-semibold text-slate-500 mb-1.5 flex items-center gap-1.5">
-                  <span class="w-1.5 h-1.5 rounded-full bg-slate-600"></span>
-                  ${t.totalSupplyLabel}
-                </span>
-                <span class="text-base sm:text-lg font-bold text-slate-100 font-mono tracking-tight">${item.totalSupply} <span class="text-xs text-slate-400 font-sans font-normal ml-1">${item.merSymbol}</span></span>
-              </div>
-              <div class="bg-slate-950/50 border border-slate-800/80 group-hover:border-slate-700 rounded-2xl p-4 flex flex-col transition shadow-inner hover:border-blue-500/20 group/stat2">
-                <span class="text-[11px] sm:text-xs font-semibold text-slate-500 mb-1.5 flex items-center gap-1.5 group-hover/stat2:text-blue-300 transition">
-                  <span class="w-1.5 h-1.5 rounded-full bg-blue-500 transition group-hover/stat2:shadow-[0_0_6px_rgba(59,130,246,0.6)]"></span>
-                  ${t.circulatingSupplyLabel}
-                </span>
-                <span class="text-base sm:text-lg font-bold text-slate-100 font-mono tracking-tight group-hover/stat2:text-blue-100 transition">${item.circulatingSupply} <span class="text-xs text-slate-400 font-sans font-normal ml-1">${item.merSymbol}</span></span>
-              </div>
-              <div class="bg-slate-950/70 border border-slate-800 group-hover:border-brand-500/30 rounded-2xl p-4 flex flex-col transition shadow-inner relative overflow-hidden group/stat3">
-                <div class="absolute inset-0 bg-brand-500/2 opacity-0 group-hover/stat3:opacity-100 transition"></div>
-                <span class="text-[11px] sm:text-xs font-semibold text-slate-500 mb-1.5 flex items-center gap-1.5 relative z-10 group-hover/stat3:text-brand-300 transition">
-                  <span class="w-1.5 h-1.5 rounded-full bg-brand-500 transition group-hover/stat3:shadow-glow-emerald"></span>
-                  ${reserveText}
-                </span>
-                <span class="text-lg sm:text-xl font-bold text-brand-400 font-mono tracking-tight relative z-10 drop-shadow-[0_0_6px_rgba(34,197,94,0.2)]">${item.nativeReserve} <span class="text-xs text-slate-400 font-sans font-normal ml-1">${item.symbol}</span></span>
-              </div>
-            </div>
-
-            <div class="pt-4 border-t border-slate-800/80 space-y-2.5">
-              <div class="text-[10px] sm:text-[11px] font-bold text-slate-500 uppercase tracking-widest flex items-center gap-2">
-                <div class="p-1 rounded-md bg-slate-800 border border-slate-700 text-brand-400 shadow-inner">
-                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                </div>
-                ${t.reserveAddresses}
-              </div>
-              <div class="grid grid-cols-1 ${gridCols} gap-2.5">
-                ${addressesHtml}
-              </div>
-            </div>
-          </div>
-        `;
+        return '<div class="group relative bg-dark-card border border-slate-800/80 hover:border-slate-700/80 hover:bg-dark-cardHover rounded-2xl p-4 sm:p-5 shadow-glow-card hover:shadow-glow-emerald transition-all duration-300 space-y-3.5 sm:space-y-4">' +
+            '<div class="flex justify-between items-center pb-3 border-b border-slate-800/80">' +
+              '<div class="flex items-center gap-3 sm:gap-3.5 min-w-0">' +
+                '<div class="relative shrink-0">' +
+                  '<img src="' + item.iconImg + '" alt="' + item.merSymbol + '" ' +
+                       'onerror="this.src=\'https://via.placeholder.com/40/111827/ffffff?text=' + item.symbol + '\'" ' +
+                       'class="w-10 h-10 sm:w-11 sm:h-11 rounded-full object-cover border-2 border-slate-700/60 shadow-md group-hover:scale-105 transition duration-300">' +
+                  '<span class="absolute -bottom-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-brand-500 text-[9px] text-black font-extrabold shadow">✓</span>' +
+                '</div>' +
+                '<div class="min-w-0">' +
+                  '<div class="flex items-center gap-1.5 sm:gap-2">' +
+                    '<h3 class="text-sm sm:text-base font-bold text-white tracking-wide truncate">' + item.name + '</h3>' +
+                    '<span class="text-[9px] sm:text-[10px] uppercase font-semibold px-1.5 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700/50 shrink-0">' +
+                      symbolLabel +
+                    '</span>' +
+                  '</div>' +
+                  '<span class="text-[11px] sm:text-xs text-slate-400 font-mono truncate block">' + subLabel + '</span>' +
+                '</div>' +
+              '</div>' +
+              '<div class="text-right shrink-0 ml-2">' +
+                '<div class="text-xl sm:text-2xl font-black text-brand-400 font-mono tracking-tight drop-shadow-[0_0_8px_rgba(34,197,94,0.3)]">' +
+                  item.ratio +
+                '</div>' +
+                '<div class="text-[9px] sm:text-[10px] text-slate-400 uppercase tracking-widest font-semibold">' + t.ratioLabel + '</div>' +
+              '</div>' +
+            '</div>' +
+            '<div class="w-full bg-slate-900 h-1.5 rounded-full overflow-hidden p-0.5 border border-slate-800">' +
+              '<div class="bg-gradient-to-r from-brand-600 to-brand-400 h-full rounded-full transition-all duration-500 w-full shadow-[0_0_10px_rgba(34,197,94,0.5)]"></div>' +
+            '</div>' +
+            '<div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3">' +
+              '<div class="bg-slate-950/60 border border-slate-800/60 group-hover:border-slate-700/50 rounded-xl p-3 sm:p-3.5 flex flex-col justify-between transition-colors">' +
+                '<span class="text-[10px] sm:text-[11px] font-medium text-slate-400 mb-1 flex items-center gap-1.5">' +
+                  '<span class="w-1.5 h-1.5 rounded-full bg-slate-500 shrink-0"></span>' +
+                  t.totalSupplyLabel +
+                '</span>' +
+                '<span class="text-sm sm:text-base font-bold text-slate-100 font-mono tracking-tight">' + item.totalSupply + ' <span class="text-xs text-slate-400 font-sans font-normal">' + item.merSymbol + '</span></span>' +
+              '</div>' +
+              '<div class="bg-slate-950/60 border border-slate-800/60 group-hover:border-slate-700/50 rounded-xl p-3 sm:p-3.5 flex flex-col justify-between transition-colors">' +
+                '<span class="text-[10px] sm:text-[11px] font-medium text-slate-400 mb-1 flex items-center gap-1.5">' +
+                  '<span class="w-1.5 h-1.5 rounded-full bg-blue-400 shrink-0"></span>' +
+                  t.circulatingSupplyLabel +
+                '</span>' +
+                '<span class="text-sm sm:text-base font-bold text-slate-100 font-mono tracking-tight">' + item.circulatingSupply + ' <span class="text-xs text-slate-400 font-sans font-normal">' + item.merSymbol + '</span></span>' +
+              '</div>' +
+              '<div class="bg-slate-950/60 border border-slate-800/60 group-hover:border-slate-700/50 rounded-xl p-3 sm:p-3.5 flex flex-col justify-between transition-colors">' +
+                '<span class="text-[10px] sm:text-[11px] font-medium text-slate-400 mb-1 flex items-center gap-1.5">' +
+                  '<span class="w-1.5 h-1.5 rounded-full bg-brand-400 shrink-0"></span>' +
+                  reserveText +
+                '</span>' +
+                '<span class="text-sm sm:text-base font-bold text-brand-400 font-mono tracking-tight">' + item.nativeReserve + ' <span class="text-xs text-slate-400 font-sans font-normal">' + item.symbol + '</span></span>' +
+              '</div>' +
+            '</div>' +
+            '<div class="pt-2 border-t border-slate-800/60 space-y-2">' +
+              '<div class="text-[10px] sm:text-[11px] font-semibold text-slate-400 uppercase tracking-wider flex items-center gap-1.5">' +
+                '<svg class="w-3.5 h-3.5 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">' +
+                  '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>' +
+                  '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>' +
+                '</svg>' +
+                t.reserveAddresses +
+              '</div>' +
+              '<div class="grid grid-cols-1 ' + gridCols + ' gap-2">' +
+                addressesHtml +
+              '</div>' +
+            '</div>' +
+          '</div>';
       }).join('');
     }
 
