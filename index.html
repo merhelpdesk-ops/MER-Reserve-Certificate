@@ -189,11 +189,11 @@
         chainETH: "Ethereum (ERC-20)",
         chainSOL: "Solana Network",
         tokens: {
-          btc: { merSymbol: "MERBTC", name: "MER Bitcoin", nativeSymbol: "BTC" },
-          eth: { merSymbol: "MERETH", name: "MER Ethereum", nativeSymbol: "ETH" },
-          sol: { merSymbol: "MERSOL", name: "MER Solana", nativeSymbol: "SOL" },
-          usdc: { merSymbol: "MERUSD", name: "MER USD", nativeSymbol: "USDC" },
-          mer: { merSymbol: "MER", name: "MER Global Token", nativeSymbol: "MER" }
+          btc: { merName: "MER Bitcoin", nativeName: "Bitcoin", nativeUnit: "BTC" },
+          eth: { merName: "MER Ethereum", nativeName: "Ethereum", nativeUnit: "ETH" },
+          sol: { merName: "MER Solana", nativeName: "Solana", nativeUnit: "SOL" },
+          usdc: { merName: "MER USD", nativeName: "USD Coin", nativeUnit: "USDC" },
+          mer: { merName: "MER Global Token", nativeName: "MER", nativeUnit: "MER" }
         }
       },
       zh: {
@@ -221,11 +221,11 @@
         chainETH: "以太坊 (ERC-20)",
         chainSOL: "索拉纳网络",
         tokens: {
-          btc: { merSymbol: "梅尔BTC", name: "梅尔比特币", nativeSymbol: "BTC" },
-          eth: { merSymbol: "梅尔ETH", name: "梅尔以太坊", nativeSymbol: "ETH" },
-          sol: { merSymbol: "梅尔SOL", name: "梅尔索拉纳", nativeSymbol: "SOL" },
-          usdc: { merSymbol: "梅尔USD", name: "梅尔美元", nativeSymbol: "USDC" },
-          mer: { merSymbol: "梅尔", name: "梅尔全球代币", nativeSymbol: "梅尔" }
+          btc: { merName: "梅尔比特币", nativeName: "比特币", nativeUnit: "比特币" },
+          eth: { merName: "梅尔以太坊", nativeName: "以太坊", nativeUnit: "以太坊" },
+          sol: { merName: "梅尔索拉纳", nativeName: "索拉纳", nativeUnit: "索拉纳" },
+          usdc: { merName: "梅尔美元", nativeName: "美元稳定币", nativeUnit: "美元" },
+          mer: { merName: "梅尔全球代币", nativeName: "梅尔", nativeUnit: "梅尔" }
         }
       },
       zht: {
@@ -253,11 +253,11 @@
         chainETH: "以太坊 (ERC-20)",
         chainSOL: "索拉納網路",
         tokens: {
-          btc: { merSymbol: "梅爾BTC", name: "梅爾比特幣", nativeSymbol: "BTC" },
-          eth: { merSymbol: "梅爾ETH", name: "梅爾以太坊", nativeSymbol: "ETH" },
-          sol: { merSymbol: "梅爾SOL", name: "梅爾索拉納", nativeSymbol: "SOL" },
-          usdc: { merSymbol: "梅爾USD", name: "梅爾美元", nativeSymbol: "USDC" },
-          mer: { merSymbol: "梅爾", name: "梅爾全球代幣", nativeSymbol: "梅爾" }
+          btc: { merName: "梅爾比特幣", nativeName: "比特幣", nativeUnit: "比特幣" },
+          eth: { merName: "梅爾以太坊", nativeName: "以太坊", nativeUnit: "以太坊" },
+          sol: { merName: "梅爾索拉納", nativeName: "索拉納", nativeUnit: "索拉納" },
+          usdc: { merName: "梅爾美元", nativeName: "美元穩定幣", nativeUnit: "美元" },
+          mer: { merName: "梅爾全球代幣", nativeName: "梅爾", nativeUnit: "梅爾" }
         }
       },
       ko: {
@@ -285,11 +285,11 @@
         chainETH: "이더리움 (ERC-20)",
         chainSOL: "솔라나 네트워크",
         tokens: {
-          btc: { merSymbol: "메르BTC", name: "메르 비트코인", nativeSymbol: "BTC" },
-          eth: { merSymbol: "메르ETH", name: "메르 이더리움", nativeSymbol: "ETH" },
-          sol: { merSymbol: "메르SOL", name: "메르 솔라나", nativeSymbol: "SOL" },
-          usdc: { merSymbol: "메르USD", name: "메르 달러", nativeSymbol: "USDC" },
-          mer: { merSymbol: "메르", name: "메르 글로벌 토큰", nativeSymbol: "메르" }
+          btc: { merName: "메르 비트코인", nativeName: "비트코인", nativeUnit: "비트코인" },
+          eth: { merName: "메르 이더리움", nativeName: "이더리움", nativeUnit: "이더리움" },
+          sol: { merName: "메르 솔라나", nativeName: "솔라나", nativeUnit: "솔라나" },
+          usdc: { merName: "메르 달러", nativeName: "USD 코인", nativeUnit: "달러" },
+          mer: { merName: "메르 글로벌 토큰", nativeName: "메르", nativeUnit: "메르" }
         }
       }
     };
@@ -297,6 +297,7 @@
     const reservesData = [
       {
         key: "btc",
+        symbol: "BTC",
         ratio: "100%",
         iconImg: "MERBTC.jpg",
         totalSupply: "100",
@@ -308,6 +309,7 @@
       },
       {
         key: "eth",
+        symbol: "ETH",
         ratio: "100%",
         iconImg: "MERETH.jpg",
         totalSupply: "1,000,000",
@@ -319,6 +321,7 @@
       },
       {
         key: "sol",
+        symbol: "SOL",
         ratio: "100%",
         iconImg: "MERSOL.jpg",
         totalSupply: "10,000,000",
@@ -330,6 +333,7 @@
       },
       {
         key: "usdc",
+        symbol: "USDC",
         ratio: "100%",
         iconImg: "MERUSD.jpg",
         totalSupply: "9,999,999,996",
@@ -343,6 +347,7 @@
       {
         key: "mer",
         isMer: true,
+        symbol: "MER",
         ratio: "100%",
         iconImg: "MER.JPG",
         totalSupply: "100,000,000",
@@ -428,7 +433,7 @@
             '</div>';
         }).join('');
 
-        const subLabel = item.isMer ? t.nativeToken : (t.backedAsset + ' ' + tokenMeta.nativeSymbol);
+        const subLabel = item.isMer ? t.nativeToken : (t.backedAsset + ' ' + tokenMeta.nativeUnit);
         const reserveText = item.isMer ? t.reserveLabel : t.nativeReserveLabel;
         const gridCols = item.addresses.length > 1 ? 'sm:grid-cols-2' : '';
 
@@ -436,16 +441,16 @@
             '<div class="flex justify-between items-center pb-3 border-b border-slate-800/80">' +
               '<div class="flex items-center gap-3 sm:gap-3.5 min-w-0">' +
                 '<div class="relative shrink-0">' +
-                  '<img src="' + item.iconImg + '" alt="' + tokenMeta.merSymbol + '" ' +
-                       'onerror="this.src=\'https://via.placeholder.com/40/111827/ffffff?text=' + tokenMeta.nativeSymbol + '\'" ' +
+                  '<img src="' + item.iconImg + '" alt="' + tokenMeta.merName + '" ' +
+                       'onerror="this.src=\'https://via.placeholder.com/40/111827/ffffff?text=' + item.symbol + '\'" ' +
                        'class="w-10 h-10 sm:w-11 sm:h-11 rounded-full object-cover border-2 border-slate-700/60 shadow-md group-hover:scale-105 transition duration-300">' +
                   '<span class="absolute -bottom-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-brand-500 text-[9px] text-black font-extrabold shadow">✓</span>' +
                 '</div>' +
                 '<div class="min-w-0">' +
                   '<div class="flex items-center gap-1.5 sm:gap-2">' +
-                    '<h3 class="text-sm sm:text-base font-bold text-white tracking-wide truncate">' + tokenMeta.merSymbol + '</h3>' +
+                    '<h3 class="text-sm sm:text-base font-bold text-white tracking-wide truncate">' + tokenMeta.merName + '</h3>' +
                     '<span class="text-[9px] sm:text-[10px] font-semibold px-1.5 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700/50 shrink-0">' +
-                      tokenMeta.name +
+                      tokenMeta.nativeName +
                     '</span>' +
                   '</div>' +
                   '<span class="text-[11px] sm:text-xs text-slate-400 font-mono truncate block">' + subLabel + '</span>' +
@@ -467,21 +472,21 @@
                   '<span class="w-1.5 h-1.5 rounded-full bg-slate-500 shrink-0"></span>' +
                   t.totalSupplyLabel +
                 '</span>' +
-                '<span class="text-sm sm:text-base font-bold text-slate-100 font-mono tracking-tight">' + item.totalSupply + ' <span class="text-xs text-slate-400 font-sans font-normal">' + tokenMeta.merSymbol + '</span></span>' +
+                '<span class="text-sm sm:text-base font-bold text-slate-100 font-mono tracking-tight">' + item.totalSupply + ' <span class="text-xs text-slate-400 font-sans font-normal">' + tokenMeta.merName + '</span></span>' +
               '</div>' +
               '<div class="bg-slate-950/60 border border-slate-800/60 group-hover:border-slate-700/50 rounded-xl p-3 sm:p-3.5 flex flex-col justify-between transition-colors">' +
                 '<span class="text-[10px] sm:text-[11px] font-medium text-slate-400 mb-1 flex items-center gap-1.5">' +
                   '<span class="w-1.5 h-1.5 rounded-full bg-blue-400 shrink-0"></span>' +
                   t.circulatingSupplyLabel +
                 '</span>' +
-                '<span class="text-sm sm:text-base font-bold text-slate-100 font-mono tracking-tight">' + item.circulatingSupply + ' <span class="text-xs text-slate-400 font-sans font-normal">' + tokenMeta.merSymbol + '</span></span>' +
+                '<span class="text-sm sm:text-base font-bold text-slate-100 font-mono tracking-tight">' + item.circulatingSupply + ' <span class="text-xs text-slate-400 font-sans font-normal">' + tokenMeta.merName + '</span></span>' +
               '</div>' +
               '<div class="bg-slate-950/60 border border-slate-800/60 group-hover:border-slate-700/50 rounded-xl p-3 sm:p-3.5 flex flex-col justify-between transition-colors">' +
                 '<span class="text-[10px] sm:text-[11px] font-medium text-slate-400 mb-1 flex items-center gap-1.5">' +
                   '<span class="w-1.5 h-1.5 rounded-full bg-brand-400 shrink-0"></span>' +
                   reserveText +
                 '</span>' +
-                '<span class="text-sm sm:text-base font-bold text-brand-400 font-mono tracking-tight">' + item.nativeReserve + ' <span class="text-xs text-slate-400 font-sans font-normal">' + tokenMeta.nativeSymbol + '</span></span>' +
+                '<span class="text-sm sm:text-base font-bold text-brand-400 font-mono tracking-tight">' + item.nativeReserve + ' <span class="text-xs text-slate-400 font-sans font-normal">' + tokenMeta.nativeUnit + '</span></span>' +
               '</div>' +
             '</div>' +
             '<div class="pt-2 border-t border-slate-800/60 space-y-2">' +
