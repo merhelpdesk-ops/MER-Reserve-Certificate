@@ -189,11 +189,11 @@
         chainETH: "Ethereum (ERC-20)",
         chainSOL: "Solana Network",
         tokens: {
-          btc: { title: "MER Bitcoin", ticker: "MERBTC", nativeSymbol: "BTC" },
-          eth: { title: "MER Ethereum", ticker: "MERETH", nativeSymbol: "ETH" },
-          sol: { title: "MER Solana", ticker: "MERSOL", nativeSymbol: "SOL" },
-          usdc: { title: "MER US Dollar", ticker: "MERUSD", nativeSymbol: "USDC" },
-          mer: { title: "MER Global Token", ticker: "MER", nativeSymbol: "MER" }
+          btc: { title: "MER Bitcoin", issuedUnit: "MER Bitcoin", nativeUnit: "Bitcoin" },
+          eth: { title: "MER Ethereum", issuedUnit: "MER Ethereum", nativeUnit: "Ethereum" },
+          sol: { title: "MER Solana", issuedUnit: "MER Solana", nativeUnit: "Solana" },
+          usdc: { title: "MER US Dollar", issuedUnit: "MER US Dollar", nativeUnit: "USD Coin" },
+          mer: { title: "MER Global Token", issuedUnit: "MER Token", nativeUnit: "MER Token" }
         }
       },
       zh: {
@@ -221,11 +221,11 @@
         chainETH: "以太坊 (ERC-20)",
         chainSOL: "索拉纳网络",
         tokens: {
-          btc: { title: "梅尔比特币", ticker: "梅尔BTC", nativeSymbol: "BTC" },
-          eth: { title: "梅尔以太坊", ticker: "梅尔ETH", nativeSymbol: "ETH" },
-          sol: { title: "梅尔索拉纳", ticker: "梅尔SOL", nativeSymbol: "SOL" },
-          usdc: { title: "梅尔美元", ticker: "梅尔USD", nativeSymbol: "USDC" },
-          mer: { title: "梅尔全球代币", ticker: "梅尔", nativeSymbol: "梅尔" }
+          btc: { title: "梅尔比特币", issuedUnit: "梅尔比特币", nativeUnit: "比特币" },
+          eth: { title: "梅尔以太坊", issuedUnit: "梅尔以太坊", nativeUnit: "以太坊" },
+          sol: { title: "梅尔索拉纳", issuedUnit: "梅尔索拉纳", nativeUnit: "索拉纳" },
+          usdc: { title: "梅尔美元", issuedUnit: "梅尔美元", nativeUnit: "美元稳定币" },
+          mer: { title: "梅尔全球代币", issuedUnit: "梅尔代币", nativeUnit: "梅尔代币" }
         }
       },
       zht: {
@@ -253,11 +253,11 @@
         chainETH: "以太坊 (ERC-20)",
         chainSOL: "索拉納網路",
         tokens: {
-          btc: { title: "梅爾比特幣", ticker: "梅爾BTC", nativeSymbol: "BTC" },
-          eth: { title: "梅爾以太坊", ticker: "梅爾ETH", nativeSymbol: "ETH" },
-          sol: { title: "梅爾索拉納", ticker: "梅爾SOL", nativeSymbol: "SOL" },
-          usdc: { title: "梅爾美元", ticker: "梅爾USD", nativeSymbol: "USDC" },
-          mer: { title: "梅爾全球代幣", ticker: "梅爾", nativeSymbol: "梅爾" }
+          btc: { title: "梅爾比特幣", issuedUnit: "梅爾比特幣", nativeUnit: "比特幣" },
+          eth: { title: "梅爾以太坊", issuedUnit: "梅爾以太坊", nativeUnit: "以太坊" },
+          sol: { title: "梅爾索拉納", issuedUnit: "梅爾索拉納", nativeUnit: "索拉納" },
+          usdc: { title: "梅爾美元", issuedUnit: "梅爾美元", nativeUnit: "美元穩定幣" },
+          mer: { title: "梅爾全球代幣", issuedUnit: "梅爾代幣", nativeUnit: "梅爾代幣" }
         }
       },
       ko: {
@@ -285,11 +285,11 @@
         chainETH: "이더리움 (ERC-20)",
         chainSOL: "솔라나 네트워크",
         tokens: {
-          btc: { title: "메르 비트코인", ticker: "메르BTC", nativeSymbol: "BTC" },
-          eth: { title: "메르 이더리움", ticker: "메르ETH", nativeSymbol: "ETH" },
-          sol: { title: "메르 솔라나", ticker: "메르SOL", nativeSymbol: "SOL" },
-          usdc: { title: "메르 달러", ticker: "메르USD", nativeSymbol: "USDC" },
-          mer: { title: "메르 글로벌 토큰", ticker: "메르", nativeSymbol: "메르" }
+          btc: { title: "메르 비트코인", issuedUnit: "메르 비트코인", nativeUnit: "비트코인" },
+          eth: { title: "메르 이더리움", issuedUnit: "메르 이더리움", nativeUnit: "이더리움" },
+          sol: { title: "메르 솔라나", issuedUnit: "메르 솔라나", nativeUnit: "솔라나" },
+          usdc: { title: "메르 달러", issuedUnit: "메르 달러", nativeUnit: "USD 코인" },
+          mer: { title: "메르 글로벌 토큰", issuedUnit: "메르 토큰", nativeUnit: "메르 토큰" }
         }
       }
     };
@@ -429,8 +429,8 @@
         }).join('');
 
         const subLabelHtml = item.isMer
-          ? '<span class="inline-flex items-center px-1.5 py-0.5 rounded bg-brand-500/10 text-brand-400 border border-brand-500/20 text-[10px] sm:text-[11px] font-medium">' + t.nativeToken + '</span>'
-          : '<span class="text-slate-400">' + t.backedAsset + '</span> <span class="text-slate-200 font-semibold">' + tokenMeta.nativeSymbol + '</span>';
+          ? '<span class="inline-flex items-center px-2 py-0.5 rounded bg-brand-500/10 text-brand-400 border border-brand-500/20 text-[10px] sm:text-[11px] font-medium">' + t.nativeToken + '</span>'
+          : '<span class="text-slate-400">' + t.backedAsset + '</span> <span class="text-slate-200 font-semibold">' + tokenMeta.nativeUnit + '</span>';
 
         const reserveText = item.isMer ? t.reserveLabel : t.nativeReserveLabel;
         const gridCols = item.addresses.length > 1 ? 'sm:grid-cols-2' : '';
@@ -440,7 +440,7 @@
               '<div class="flex items-center gap-3 sm:gap-3.5 min-w-0">' +
                 '<div class="relative shrink-0">' +
                   '<img src="' + item.iconImg + '" alt="' + tokenMeta.title + '" ' +
-                       'onerror="this.src=\'https://via.placeholder.com/40/111827/ffffff?text=' + tokenMeta.nativeSymbol + '\'" ' +
+                       'onerror="this.src=\'https://via.placeholder.com/40/111827/ffffff?text=' + tokenMeta.nativeUnit + '\'" ' +
                        'class="w-10 h-10 sm:w-11 sm:h-11 rounded-full object-cover border-2 border-slate-700/60 shadow-md group-hover:scale-105 transition duration-300">' +
                   '<span class="absolute -bottom-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-brand-500 text-[9px] text-black font-extrabold shadow">✓</span>' +
                 '</div>' +
@@ -469,21 +469,21 @@
                   '<span class="w-1.5 h-1.5 rounded-full bg-slate-500 shrink-0"></span>' +
                   t.totalSupplyLabel +
                 '</span>' +
-                '<span class="text-sm sm:text-base font-bold text-slate-100 font-mono tracking-tight">' + item.totalSupply + ' <span class="text-xs text-slate-400 font-sans font-normal">' + tokenMeta.ticker + '</span></span>' +
+                '<span class="text-sm sm:text-base font-bold text-slate-100 font-mono tracking-tight">' + item.totalSupply + ' <span class="text-xs text-slate-400 font-sans font-normal">' + tokenMeta.issuedUnit + '</span></span>' +
               '</div>' +
               '<div class="bg-slate-950/60 border border-slate-800/60 group-hover:border-slate-700/50 rounded-xl p-3 sm:p-3.5 flex flex-col justify-between transition-colors">' +
                 '<span class="text-[10px] sm:text-[11px] font-medium text-slate-400 mb-1 flex items-center gap-1.5">' +
                   '<span class="w-1.5 h-1.5 rounded-full bg-blue-400 shrink-0"></span>' +
                   t.circulatingSupplyLabel +
                 '</span>' +
-                '<span class="text-sm sm:text-base font-bold text-slate-100 font-mono tracking-tight">' + item.circulatingSupply + ' <span class="text-xs text-slate-400 font-sans font-normal">' + tokenMeta.ticker + '</span></span>' +
+                '<span class="text-sm sm:text-base font-bold text-slate-100 font-mono tracking-tight">' + item.circulatingSupply + ' <span class="text-xs text-slate-400 font-sans font-normal">' + tokenMeta.issuedUnit + '</span></span>' +
               '</div>' +
               '<div class="bg-slate-950/60 border border-slate-800/60 group-hover:border-slate-700/50 rounded-xl p-3 sm:p-3.5 flex flex-col justify-between transition-colors">' +
                 '<span class="text-[10px] sm:text-[11px] font-medium text-slate-400 mb-1 flex items-center gap-1.5">' +
                   '<span class="w-1.5 h-1.5 rounded-full bg-brand-400 shrink-0"></span>' +
                   reserveText +
                 '</span>' +
-                '<span class="text-sm sm:text-base font-bold text-brand-400 font-mono tracking-tight">' + item.nativeReserve + ' <span class="text-xs text-slate-400 font-sans font-normal">' + tokenMeta.nativeSymbol + '</span></span>' +
+                '<span class="text-sm sm:text-base font-bold text-brand-400 font-mono tracking-tight">' + item.nativeReserve + ' <span class="text-xs text-slate-400 font-sans font-normal">' + tokenMeta.nativeUnit + '</span></span>' +
               '</div>' +
             '</div>' +
             '<div class="pt-2 border-t border-slate-800/60 space-y-2">' +
